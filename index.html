@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"I Was 30 Seconds From Collapsing Behind the Pulpit" - How Pastor Adebayo Conquered His Blood Pressure Crisis Without Pills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #0f0c29 0%, #24243e 50%, #313862 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        
+        .urgent-banner {
+            background: linear-gradient(45deg, #ff0000, #ff4444);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 0.9em;
+            animation: urgent-flash 2s infinite;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes urgent-flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '✝';
+            position: absolute;
+            font-size: 15em;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .headline {
+            font-size: 2.4em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            line-height: 1.1;
+            color: #ffd700;
+        }
+        
+        .subheadline {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            line-height: 1.3;
+            color: #e0e0e0;
+        }
+        
+        .pastor-badge {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        .content {
+            padding: 50px 40px;
+            font-size: 1.15em;
+        }
+        
+        .opening-hook {
+            font-size: 1.4em;
+            color: #d32f2f;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 35px;
+            line-height: 1.4;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 6px solid #d32f2f;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.15);
+        }
+        
+        .story-section {
+            margin: 45px 0;
+        }
+        
+        .story-section h2 {
+            color: #1565c0;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .story-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #ffd700, #ffb300);
+            border-radius: 2px;
+        }
+        
+        .story-highlight {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 8px solid #ff8f00;
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 8px 30px rgba(255, 143, 0, 0.2);
+            position: relative;
+        }
+        
+        .story-highlight::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 2em;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .crisis-moment {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border: 3px solid #e91e63;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 35px rgba(233, 30, 99, 0.2);
+        }
+        
+        .crisis-moment::before {
+            content: '⚠️';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e91e63;
+            color: white;
+            font-size: 2em;
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+        }
+        
+        .crisis-moment h3 {
+            color: #ad1457;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #1565c0;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 6px solid #1565c0;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4em;
+            color: #1565c0;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .content-gate {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            color: white;
+            padding: 50px 40px;
+            margin: 50px 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(26, 35, 126, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-gate::before {
+            content: '🔐';
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            font-size: 3.5em;
+            opacity: 0.15;
+            animation: lock-pulse 3s infinite;
+        }
+        
+        @keyframes lock-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.1); opacity: 0.25; }
+        }
+        
+        .gate-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .gate-header h3 {
+            color: #ffd700;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .gate-header p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gate-form {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.12);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .gate-form .form-group {
+            margin: 25px 0;
+        }
+        
+        .gate-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffd700;
+            font-size: 1.1em;
+        }
+        
+        .gate-form input,
+        .gate-form select {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+        
+        .gate-form input:focus,
+        .gate-form select:focus {
+            outline: none;
+            box-shadow: 0 0 25px rgba(255,215,0,0.6);
+            transform: scale(1.02);
+            background: rgba(255,255,255,1);
+            border-color: #ffd700;
+        }
+        
+        .unlock-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            border: none;
+            padding: 22px 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .unlock-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+        
+        .unlock-btn:hover::before {
+            left: 100%;
+        }
+        
+        .unlock-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 45px rgba(255, 107, 53, 0.7);
+            background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+        }
+        
+        .privacy-note {
+            text-align: center;
+            margin-top: 25px;
+            opacity: 0.85;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        
+        .hidden-content {
+            display: none;
+            transition: all 0.6s ease-in-out;
+        }
+        
+        .revelation-section {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+            border-left: 8px solid #2e7d32;
+            padding: 40px;
+            border-radius: 0 20px 20px 0;
+            margin: 40px 0;
+            animation: reveal 1s ease-out;
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.2);
+        }
+        
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .revelation-section h3 {
+            color: #1b5e20;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .ingredient-showcase {
+            display: grid;
+            gap: 20px;
+            margin: 35px 0;
+        }
+        
+        .ingredient-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            border-left: 6px solid #2e7d32;
+            font-size: 1.2em;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .ingredient-item:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+        }
+        
+        .biblical-insight {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #7b1fa2;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #4a148c;
+            position: relative;
+        }
+        
+        .biblical-insight::before {
+            content: '✝';
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            font-size: 1.8em;
+            color: #7b1fa2;
+            background: white;
+            padding: 5px 8px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(123, 31, 162, 0.2);
+        }
+            font-size: 2.5em;
+            min-width: 60px;
+        }
+        
+        .transformation-results {
+            background: linear-gradient(135deg, #fff9c4 0%, #f4e6a1 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 3px solid #f57f17;
+            box-shadow: 0 12px 35px rgba(245, 127, 23, 0.2);
+        }
+        
+        .transformation-results h3 {
+            color: #e65100;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .result-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .result-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .result-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e65100;
+            display: block;
+        }
+        
+        .result-text {
+            font-size: 1em;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 50%, #f44336 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            animation: shimmer 4s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-headline {
+            font-size: 2.4em;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            color: #ffd700;
+        }
+        
+        .cta-text {
+            font-size: 1.3em;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .final-form {
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .final-form h3 {
+            margin-bottom: 25px;
+            color: #ffd700;
+            font-size: 1.6em;
+        }
+        
+        .final-form .form-group {
+            margin: 20px 0;
+        }
+        
+        .final-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .final-form input {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+        }
+        
+        .final-form input:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(255,215,0,0.5);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+        
+        .final-submit-btn {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+            color: #1a1a1a;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 25px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .final-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(135deg, #ffb300 0%, #ffd700 100%);
+        }
+        
+        .guarantee-box {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .guarantee-box h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 1.8em;
+            }
+            
+            .subheadline {
+                font-size: 1.2em;
+            }
+            
+            .content {
+                padding: 40px 25px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .gate-header h3 {
+                font-size: 1.6em;
+            }
+            
+            .gate-form {
+                padding: 25px;
+            }
+            
+            .cta-section {
+                padding: 50px 25px;
+            }
+            
+            .cta-headline {
+                font-size: 1.8em;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="urgent-banner">
+            🚨 BREAKING: Nigerian Pastor Discovers 4,000-Year-Old Secret That Eliminates High Blood Pressure Without Pills! 🚨
+        </div>
+
+        <div class="header">
+            <div class="header-content">
+                <h1 class="headline">"I Was 30 Seconds From Collapsing Behind the Pulpit"</h1>
+                <p class="subheadline">How Pastor Adebayo Conquered His Blood Pressure Crisis Without Pills and Reclaimed His Ministry Power</p>
+                <div class="pastor-badge">📖 EXCLUSIVE REPORT FOR NIGERIAN CLERGY 📖</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="opening-hook">
+                <strong>"Your body is a temple of the Holy Spirit"</strong> - but what happens when that temple is under attack by high blood pressure? If you're a Nigerian pastor feeling the weight of ministry stress crushing your health, exhausted from the constant fear of "what if I collapse during service?"... then this might be the most important message you'll ever read.
+            </div>
+
+            <p><strong>Pastor Adebayo</strong> from Abuja, thought his ministry was over.</p>
+
+            <div class="biblical-insight">
+                <p>📖 <em>"He sent His word and healed them, and delivered them from their destructions"</em> - Sometimes God's healing comes through His natural provisions, not man-made chemicals.</p>
+            </div>
+
+            <p>At 52, this respected man of God had been battling hypertension for 8 years. The medications made him dizzy during prayer. The dietary restrictions felt impossible with communion meals and fellowship dinners. And worst of all...</p>
+
+            <div class="crisis-moment">
+                <h3>The Day Everything Changed</h3>
+                <p><strong>"I was preaching on a Sunday when I felt my vision blur. My chest tightened. The congregation of 800 people started spinning before my eyes. I grabbed the pulpit with both hands, knowing I had maybe 30 seconds before I'd collapse in front of everyone."</strong></p>
+            </div>
+
+            <p>That Sunday morning, Pastor Adebayo faced every Nigerian clergy's worst nightmare: <strong>a public health crisis that could destroy decades of ministry reputation</strong>.</p>
+
+            <p>But what happened next shocked his doctors, amazed his congregation, and started a quiet revolution among Nigerian pastors...</p>
+
+            <div class="story-section">
+                <h2>🔥 The Ancient Discovery That Changed Everything</h2>
+                
+                <div class="story-highlight">
+                    <p>Three weeks after that near-collapse, Pastor Adebayo was not only back to his energetic self—he was preaching 4-hour revival services without fatigue. His blood pressure had dropped to 120/80 naturally. No pills. No side effects. No fear.</p>
+                    <p><strong>Just like when the woman touched the hem of Jesus' garment and was made whole, Pastor Adebayo discovered that sometimes healing requires reaching out to the right source.</strong></p>
+                </div>
+
+                <p>How did this transformation happen so quickly?</p>
+
+                <div class="biblical-insight">
+                    <p>📖 <em>"And the leaves of the tree were for the healing of the nations"</em> - God placed healing in nature itself, not in laboratory chemicals that didn't exist in Biblical times.</p>
+                </div>
+
+                <p>The answer lies in a ancient botanical secret that modern medicine doesn't want you to know about. A natural compound so powerful that it was considered "liquid gold" in ancient times...</p>
+
+                <div class="quote">
+                    "My doctors couldn't believe the results. In 21 days, I went from taking 3 different medications to taking ZERO. My energy returned, my mind became sharp again, and I felt like the psalmist when he said 'He restores my soul.' God had given me a second chance at ministry." - Pastor Adebayo
+                </div>
+
+                <p><strong>But here's what shocked Pastor Adebayo the most:</strong> This wasn't just any plant extract from the local market. The difference between wild, unprocessed plants and pharmaceutical-grade, purified extracts is like the difference between muddy river water and pure spring water.</p>
+
+                <p>But Pastor Adebayo wasn't the first Nigerian clergyman to discover this ancient secret...</p>
+
+                <h3>📚 The Prophet's Formula</h3>
+                
+                <p>While researching natural remedies in the Bible, Pastor Adebayo stumbled upon references to a "healing plant" mentioned throughout Scripture. <strong>Remember when the prophet asked, "Is there no balm in Gilead? Is there no physician there?"</strong> This wasn't just poetry—it was pointing to God's natural pharmacy!</p>
+                
+                <div class="biblical-insight">
+                    <p>📖 <em>"And God said, 'Behold, I have given you every herb bearing seed... and every tree, in which is the fruit of a tree yielding seed; to you it shall be for meat.'"</em> - The Creator Himself established plants as our medicine!</p>
+                </div>
+
+                <p>The same healing plant that...</p>
+                
+                <ul style="margin: 20px 0; padding-left: 30px;">
+                    <li>✅ Was among the precious spices brought to prepare Christ's body with healing intentions</li>
+                    <li>✅ Ancient priests used for purification rituals before entering God's presence</li>
+                    <li>✅ Egyptian physicians reserved for royalty and religious leaders</li>
+                    <li>✅ Modern science now proves can naturally regulate blood pressure and cleanse the body</li>
+                </ul>
+
+                <p><strong>But here's the critical distinction:</strong> Not all healing plants are created equal. Just as Scripture warns us about "every wind of doctrine," we must be wise about the quality and purity of what we put into our temple bodies.</p>
+            </div>
+
+            <div class="story-section">
+                <h2>⚡ The 21-Day Biblical Protocol</h2>
+                
+                <div class="biblical-insight">
+                    <p>📖 <em>"And it shall come to pass, that before they call, I will answer; and while they are yet speaking, I will hear"</em> - God's healing provisions are already prepared for us!</p>
+                </div>
+                
+                <p>Pastor Adebayo didn't just randomly start taking this Biblical remedy. He discovered a specific protocol—a precise combination and timing that unlocks the full healing potential, <strong>just like how the priests had specific instructions for preparing the holy anointing oil.</strong></p>
+
+                <div class="story-highlight">
+                    <p><strong>Week 1:</strong> Blood pressure dropped from 165/95 to 145/85<br>
+                    <strong>Week 2:</strong> Energy levels doubled, brain fog cleared completely<br>
+                    <strong>Week 3:</strong> Achieved perfect 120/80 reading, threw away all medications</p>
+                    <p><em>"And Jesus said unto him, According to your faith be it unto you. And his eyes were opened immediately."</em> - Pastor Adebayo's faith in God's natural provisions opened his path to healing.</p>
+                </div>
+
+                <p><strong>The key was finding the right company that processed these biblical healing compounds with modern purity standards.</strong> Not all aloe is created equal—some companies use inferior processing that destroys the healing compounds, while others maintain the God-given potency through advanced stabilization techniques.</p>
+
+                <div class="biblical-insight">
+                    <p>📖 <em>"Every good gift and every perfect gift is from above"</em> - When we find the right source, God's gifts work as He intended them to work.</p>
+                </div>
+
+                <p>The results were so dramatic that Pastor Adebayo quietly shared the protocol with 12 fellow pastors across Nigeria. Within 90 days...</p>
+
+                <div class="transformation-results">
+                    <h3>🎯 "By Their Fruits You Shall Know Them" - The Results</h3>
+                    
+                    <div class="biblical-insight">
+                        <p>📖 <em>"And they went forth, and preached every where, the Lord working with them, and confirming the word with signs following"</em> - These results confirm God's healing power through His natural provisions.</p>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">11 out of 12</span>
+                            <div class="result-text">pastors reduced their BP medication by 50% or more</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">9 out of 12</span>
+                            <div class="result-text">completely eliminated BP medications</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">100%</span>
+                            <div class="result-text">reported increased energy for ministry</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">Zero</span>
+                            <div class="result-text">reported any negative side effects</div>
+                        </div>
+                    </div>
+                    
+                    <p style="text-align: center; margin-top: 20px; font-style: italic;"><strong>Most importantly: Every single pastor discovered the difference between raw, unprocessed plants and pharmaceutical-grade, stabilized extracts from a trusted source.</strong></p>
+                </div>
+            </div>
+
+            <div class="content-gate">
+                <div class="gate-header">
+                    <h3>🔐 PASTOR'S EXCLUSIVE ACCESS</h3>
+                    <p>Before I reveal this Biblical healing protocol and the exact pharmaceutical-grade source Pastor Adebayo used (not just any plant from the market), I need to ensure this life-changing information reaches only genuine Nigerian pastors who understand that <strong>"faith without works is dead"</strong> - and are ready to take action on God's natural provisions.</p>
+                    
+                    <div class="biblical-insight">
+                        <p>📖 <em>"And Moses cried unto the Lord; and the Lord showed him a tree, which when he had cast into the waters, the waters were made sweet"</em> - God shows us the right source when we seek Him!</p>
+                    </div>
+                </div>
+                
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="gate-form" id="contentGateForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pastorName">Pastor's Full Name *</label>
+                            <input type="text" id="pastorName" name="pastorName" required placeholder="Pastor [Your Full Name]">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number *</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+234 XXX XXX XXXX">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="churchDetails">Church Name & Location *</label>
+                        <input type="text" id="churchDetails" name="churchDetails" required placeholder="e.g., Victory Baptist Church, Ikeja Lagos">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="yearsMinistry">Years in Ministry *</label>
+                        <select id="yearsMinistry" name="yearsMinistry" required>
+                            <option value="">Select years...</option>
+                            <option value="1-5">1-5 years</option>
+                            <option value="6-10">6-10 years</option>
+                            <option value="11-20">11-20 years</option>
+                            <option value="21-30">21-30 years</option>
+                            <option value="30+">30+ years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hbpConcern">Your Greatest HBP Concern *</label>
+                        <select id="hbpConcern" name="hbpConcern" required>
+                            <option value="">Select your main concern...</option>
+                            <option value="public-collapse">Fear of collapsing during service</option>
+                            <option value="medication-side-effects">Medication side effects affecting ministry</option>
+                            <option value="energy-fatigue">Chronic fatigue and low energy</option>
+                            <option value="financial-burden">High cost of medications</option>
+                            <option value="family-legacy">Protecting family from same condition</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="unlock-btn">
+                        🔓 REVEAL THE BIBLICAL HEALING PROTOCOL
+                    </button>
+                    
+                    <div class="privacy-note">
+                        <small>🔒 Your information is secure and will
