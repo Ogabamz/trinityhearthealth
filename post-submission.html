@@ -579,6 +579,52 @@
             margin-bottom: 15px;
             color: #856404;
         }
+
+        .form-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .order-form .form-group {
+            margin: 25px 0;
+        }
+        
+        .order-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #1b5e20;
+            font-size: 1.1em;
+        }
+        
+        .order-form input,
+        .order-form select,
+        .order-form textarea {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            transition: all 0.4s ease;
+            border: 2px solid #ccc;
+        }
+        
+        .order-form input:focus,
+        .order-form select:focus,
+        .order-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 25px rgba(40, 167, 69, 0.6);
+            transform: scale(1.02);
+            background: rgba(255,255,255,1);
+            border-color: #28a745;
+        }
         
         @media (max-width: 768px) {
             .headline {
@@ -858,7 +904,7 @@
                     </div>
                     
                     <button type="submit" class="order-button" style="width: 100%; margin-top: 20px;">
-                        🔒 SECURE MY 2-BOTTLE PACK - ₦18,500
+                        🔒 YES! SECURE MY 2-BOTTLE PACK NOW! - ₦18,500
                     </button>
                 </form>
                 
