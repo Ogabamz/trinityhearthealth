@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Pastor's Heart Health System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #0f0c29 0%, #24243e 50%, #313862 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        
+        .blessing-banner {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '✝';
+            position: absolute;
+            font-size: 20em;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 40s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .headline {
+            font-size: 2.6em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            line-height: 1.1;
+            color: #ffd700;
+        }
+        
+        .subheadline {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            line-height: 1.3;
+            color: #e0e0e0;
+        }
+        
+        .content {
+            padding: 50px 40px;
+            font-size: 1.2em;
+        }
+        
+        .success-message {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+            border-left: 8px solid #28a745;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.2);
+            text-align: center;
+        }
+        
+        .success-message h2 {
+            color: #155724;
+            font-size: 2em;
+            margin-bottom: 25px;
+        }
+        
+        .success-icon {
+            font-size: 4em;
+            color: #28a745;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .process-section {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 3px solid #f39c12;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+        
+        .process-section h3 {
+            color: #d68910;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .process-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .process-icon {
+            font-size: 2em;
+            color: #f39c12;
+        }
+        
+        .process-content strong {
+            color: #d68910;
+        }
+        
+        .biblical-insight {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #7b1fa2;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #4a148c;
+            position: relative;
+        }
+        
+        .biblical-insight::before {
+            content: '✝';
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            font-size: 1.8em;
+            color: #7b1fa2;
+            background: white;
+            padding: 5px 8px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(123, 31, 162, 0.2);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border: 3px solid #17a2b8;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            color: #138496;
+            font-size: 2em;
+            margin-bottom: 25px;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .contact-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item strong {
+            color: #138496;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 40px 25px;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="blessing-banner">
+            Blessings Pastor! Your order has been received and is being processed
+        </div>
+
+        <div class="header">
+            <div class="header-content">
+                <h1 class="headline">Thank You, Pastor!</h1>
+                <p class="subheadline">Your Heart Health System Order Has Been Confirmed</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="success-message">
+                <span class="success-icon">✅</span>
+                <h2>Order Successfully Submitted!</h2>
+                <p style="font-size: 1.3em; margin-bottom: 20px;">Thank you for taking this important step toward better health stewardship. Your order for Pastor Adebayo's Complete Heart Health Protocol has been received and is being processed.</p>
+                <p style="font-size: 1.1em;">We're excited to be part of your wellness journey and look forward to supporting you in your ministry.</p>
+            </div>
+
+            <div class="reassurance-section" style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); border: 3px solid #28a745; padding: 40px; margin: 40px 0; border-radius: 20px; text-align: center;">
+                <h3 style="color: #155724; font-size: 2em; margin-bottom: 25px;">🎯 You've Made the RIGHT Decision, Pastor!</h3>
+                
+                <div style="background: white; padding: 30px; border-radius: 15px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #155724; font-size: 1.4em; margin-bottom: 20px;">Why This Was the Perfect Choice for You:</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div style="padding: 15px; border-left: 4px solid #28a745;">
+                            <strong style="color: #155724;">✅ You Chose Action Over Inaction</strong><br>
+                            <span style="color: #666;">While others talk about health, you took decisive action. This is the mark of a true leader.</span>
+                        </div>
+                        
+                        <div style="padding: 15px; border-left: 4px solid #28a745;">
+                            <strong style="color: #155724;">✅ You Invested in Your Ministry</strong><br>
+                            <span style="color: #666;">Your health directly impacts your ability to serve God's people effectively.</span>
+                        </div>
+                        
+                        <div style="padding: 15px; border-left: 4px solid #28a745;">
+                            <strong style="color: #155724;">✅ You Followed Proven Results</strong><br>
+                            <span style="color: #666;">Pastor Adebayo's transformation is real, documented, and reproducible.</span>
+                        </div>
+                        
+                        <div style="padding: 15px; border-left: 4px solid #28a745;">
+                            <strong style="color: #155724;">✅ You Chose Biblical Wisdom</strong><br>
+                            <span style="color: #666;">Natural, God-given solutions over synthetic alternatives.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 1.2em; color: #155724; font-weight: bold; margin-top: 25px;">
+                    "The plans of the diligent lead surely to abundance" - Proverbs 21:5<br>
+                    You've just demonstrated the diligence that leads to abundance in health and ministry!
+                </p>
+            </div>
+
+            <div class="process-section">
+                <h3>⚡ What Happens Next</h3>
+
+                <div class="process-grid">
+                    <div class="process-step">
+                        <span class="process-icon">📞</span>
+                        <div>
+                            <strong>Step 1: Confirmation Call (Within 2 Hours)</strong><br>
+                            Our team will call to confirm your order, address any questions, and arrange delivery details.
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <span class="process-icon">📦</span>
+                        <div>
+                            <strong>Step 2: Fast Delivery (3-5 Business Days)</strong><br>
+                            Your Heart Health System ships immediately with tracking information sent to your phone.
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <span class="process-icon">📚</span>
+                        <div>
+                            <strong>Step 3: Digital Resources (Immediate)</strong><br>
+                            Download your Pastor's Protocol Guide and bonuses instantly via email and WhatsApp.
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <span class="process-icon">🎯</span>
+                        <div>
+                            <strong>Step 4: Start Your Transformation</strong><br>
+                            Begin Pastor Adebayo's exact protocol with our support team available 24/7 for guidance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="biblical-insight">
+                <p style="font-size: 1.3em; text-align: center;"><strong>📖 "Therefore, I urge you, brothers and sisters, in view of God's mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship." - Romans 12:1</strong></p>
+                <p style="margin-top: 20px; text-align: center;">Your health is not separate from your ministry - it's the foundation that makes sustained, powerful ministry possible. Today, you've taken the step that 200+ Nigerian pastors have already taken toward better stewardship of the temple God has given you.</p>
+            </div>
+
+            <div class="action-buttons" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 40px; margin: 40px 0; border-radius: 20px; text-align: center;">
+                <h3 style="color: #495057; font-size: 1.8em; margin-bottom: 30px;">📱 Quick Actions</h3>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+                    <button id="trackOrderBtn" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;">
+                        📱 Track My Order on WhatsApp
+                    </button>
+                    
+                    <button id="shareLinkBtn" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;">
+                        🔗 Share This Link
+                    </button>
+                </div>
+                
+                <p style="color: #6c757d; font-size: 0.9em; margin-bottom: 20px;">
+                    Help other pastors discover this life-changing protocol by sharing your experience
+                </p>
+                
+                <div style="background: rgba(37, 211, 102, 0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="color: #128C7E; font-weight: bold; margin-bottom: 10px;">💡 Sharing Tip:</p>
+                    <p style="color: #666; font-size: 0.95em;">
+                        "I just ordered Pastor Adebayo's Heart Health Protocol. The transformation stories are incredible! 
+                        If you're a pastor looking to improve your health and ministry energy, you should check this out. 
+                        Here's the link: [LINK]"
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="try.html" class="back-button">← Return to Main Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WhatsApp Order Tracking Button
+        document.getElementById('trackOrderBtn').addEventListener('click', function() {
+            const phoneNumber = '+234XXX XXX XXXX'; // Replace with actual WhatsApp number
+            const message = encodeURIComponent('Hello! I would like to track my Pastor Adebayo Heart Health Protocol order. My order was just placed.');
+            const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Share Link Button
+        document.getElementById('shareLinkBtn').addEventListener('click', function() {
+            const currentUrl = window.location.origin + '/try.html';
+            const shareMessage = encodeURIComponent(`I just ordered Pastor Adebayo's Heart Health Protocol. The transformation stories are incredible! If you're a pastor looking to improve your health and ministry energy, you should check this out. Here's the link: ${currentUrl}`);
+            
+            // Try to copy to clipboard first
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(currentUrl).then(function() {
+                    // Show success message
+                    const button = document.getElementById('shareLinkBtn');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '✅ Link Copied!';
+                    button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                    
+                    setTimeout(function() {
+                        button.innerHTML = originalText;
+                        button.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
+                    }, 2000);
+                }).catch(function() {
+                    // Fallback to WhatsApp
+                    openWhatsAppShare(shareMessage);
+                });
+            } else {
+                // Fallback to WhatsApp
+                openWhatsAppShare(shareMessage);
+            }
+        });
+
+        function openWhatsAppShare(message) {
+            const phoneNumber = '+234XXX XXX XXXX'; // Replace with actual WhatsApp number
+            const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add hover effects for buttons
+        document.getElementById('trackOrderBtn').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 12px 35px rgba(37, 211, 102, 0.6)';
+        });
+
+        document.getElementById('trackOrderBtn').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 8px 25px rgba(37, 211, 102, 0.4)';
+        });
+
+        document.getElementById('shareLinkBtn').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 12px 35px rgba(37, 211, 102, 0.6)';
+        });
+
+        document.getElementById('shareLinkBtn').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 8px 25px rgba(37, 211, 102, 0.4)';
+        });
+    </script>
+</body>
+</html>

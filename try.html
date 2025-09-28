@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastor Adebayo's Complete Heart Health Protocol - The Full Trinity System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #0f0c29 0%, #24243e 50%, #313862 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        
+        .blessing-banner {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '✝';
+            position: absolute;
+            font-size: 20em;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 40s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .headline {
+            font-size: 2.6em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            line-height: 1.1;
+            color: #ffd700;
+        }
+        
+        .subheadline {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            line-height: 1.3;
+            color: #e0e0e0;
+        }
+        
+        .content {
+            padding: 50px 40px;
+            font-size: 1.2em;
+        }
+        
+        .gratitude-section {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+            border-left: 8px solid #28a745;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.2);
+        }
+        
+        .gratitude-section h2 {
+            color: #155724;
+            font-size: 2em;
+            margin-bottom: 25px;
+        }
+        
+        .biblical-insight {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 6px solid #7b1fa2;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #4a148c;
+            position: relative;
+        }
+        
+        .biblical-insight::before {
+            content: '✝';
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            font-size: 1.8em;
+            color: #7b1fa2;
+            background: white;
+            padding: 5px 8px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(123, 31, 162, 0.2);
+        }
+        
+        .protocol-reveal {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 4px solid #ff8f00;
+            padding: 50px;
+            margin: 50px 0;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 15px 45px rgba(255, 143, 0, 0.3);
+        }
+        
+        .protocol-reveal::before {
+            content: '📖';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            background: #ff8f00;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
+        }
+        
+        .protocol-reveal h2 {
+            color: #e65100;
+            font-size: 2.3em;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .trinity-system {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+            border: 4px solid #2e7d32;
+            padding: 50px;
+            margin: 50px 0;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 15px 45px rgba(46, 125, 50, 0.3);
+        }
+        
+        .trinity-system::before {
+            content: '🌿';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            background: #2e7d32;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+        }
+        
+        .trinity-system h2 {
+            color: #1b5e20;
+            font-size: 2.3em;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .trinity-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .trinity-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-top: 6px solid #2e7d32;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .trinity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+        }
+        
+        .trinity-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .trinity-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        .trinity-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #1565c0;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 6px solid #1565c0;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4em;
+            color: #1565c0;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .stewardship-section {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe6b3 100%);
+            border-left: 6px solid #f39c12;
+            padding: 40px;
+            margin: 50px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.2);
+        }
+        
+        .stewardship-section h2 {
+            color: #d68910;
+            font-size: 2em;
+            margin-bottom: 25px;
+        }
+        
+        .investment-breakdown {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #6c757d;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .investment-breakdown::before {
+            content: '💰';
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            font-size: 2.5em;
+            background: #6c757d;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        
+        .investment-breakdown h2 {
+            color: #495057;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .value-grid {
+            display: grid;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #6c757d;
+        }
+        
+        .value-item.highlight {
+            border-left: 4px solid #28a745;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f8fff8 100%);
+        }
+        
+        .value-item.total {
+            border-left: 4px solid #dc3545;
+            font-size: 1.3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+        }
+        
+        .value-name {
+            flex: 1;
+            font-size: 1.1em;
+        }
+        
+        .value-price {
+            font-weight: bold;
+            color: #495057;
+            font-size: 1.2em;
+        }
+        
+        .value-item.highlight .value-price {
+            color: #28a745;
+        }
+        
+        .value-item.total .value-price {
+            color: #dc3545;
+        }
+        
+        .special-offer {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            color: white;
+            padding: 50px 40px;
+            margin: 50px 0;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(23, 162, 184, 0.4);
+        }
+        
+        .special-offer h2 {
+            font-size: 2.4em;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .pricing-display {
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .regular-price {
+            font-size: 1.8em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .special-price {
+            font-size: 3.2em;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 15px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+        }
+        
+        .savings-amount {
+            font-size: 1.5em;
+            color: #90EE90;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .action-section {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .complete-button {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 25px 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .complete-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .complete-button:hover::before {
+            left: 100%;
+        }
+        
+        .complete-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(40, 167, 69, 0.7);
+            background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+        }
+        
+        .continue-button {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 2px solid rgba(255,255,255,0.6);
+            padding: 20px 40px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .continue-button:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-color: white;
+        }
+        
+        .testimonials {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 15px;
+            border-left: 6px solid #6c757d;
+        }
+        
+        .testimonials h3 {
+            color: #495057;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #28a745;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #495057;
+            text-align: right;
+        }
+        
+        .guarantee {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border: 3px solid #17a2b8;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .guarantee::before {
+            content: '🛡️';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            background: #17a2b8;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+        }
+        
+        .guarantee h3 {
+            color: #138496;
+            font-size: 2em;
+            margin-bottom: 25px;
+            margin-top: 15px;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-size: 0.95em;
+            color: #856404;
+        }
+        
+        .disclaimer h4 {
+            margin-bottom: 15px;
+            color: #856404;
+        }
+        
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 40px 25px;
+            }
+            
+            .action-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .complete-button, .continue-button {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .trinity-products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="blessing-banner">
+            Blessings Pastor! Thank you for taking the first step toward better health stewardship
+        </div>
+
+        <div class="header">
+            <div class="header-content">
+                <h1 class="headline">Pastor Adebayo's Complete Heart Health Protocol</h1>
+                <p class="subheadline">The Full Trinity System That Restored His Ministry Vitality</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="gratitude-section">
+                <h2>Thank You for Your Faith Step, Pastor</h2>
+                <p>By ordering the Forever Living Aloe Vera Gel, you've demonstrated the kind of faith-based action that God honors. You're taking responsibility for stewarding the temple He's given you, and that's truly commendable.</p>
+                
+                <p style="margin-top: 20px;">However, before your order is finalized, there's something important I'd like to share with you about Pastor Adebayo's complete wellness journey.</p>
+            </div>
+
+            <div class="biblical-insight">
+                <p>📖 <em>"In the mouth of two or three witnesses shall every word be established"</em> - 2 Corinthians 13:1<br><br>
+                Just as God often establishes truth through multiple witnesses, He also provides multiple natural provisions that work together for our wellness.</p>
+            </div>
+
+            <div class="protocol-reveal">
+                <h2>The Complete Biblical Wellness Protocol</h2>
+                
+                <p style="font-size: 1.3em; text-align: center; margin-bottom: 30px;">While researching Pastor Adebayo's health transformation, we discovered that the Aloe Vera Gel was indeed foundational - but it was part of a more comprehensive approach to natural wellness support.</p>
+                
+                <p>Pastor Adebayo shared with us that his remarkable transformation came not from one supplement alone, but from what he calls "God's Trinity of Natural Support" - three biblical plants that, when used together, created the synergistic effect that gave him back his ministry vitality.</p>
+                
+                <div class="quote">
+                    "Brother, when I started with just one supplement, I noticed some improvement. But it was when I began using all three together - following the principle that 'a threefold cord is not quickly broken' - that I experienced the dramatic transformation. Each plant serves a purpose, but together they create something far greater than the sum of their parts."
+                </div>
+                
+                <p>The Aloe Vera Gel you've ordered provides an excellent foundation for digestive health and cellular support. But Pastor Adebayo's complete protocol included two additional biblical plants that work in harmony with the aloe to provide comprehensive cardiovascular and overall wellness support.</p>
+            </div>
+
+            <div class="trinity-system">
+                <h2>The Heart Health Trinity System</h2>
+                
+                <p style="font-size: 1.3em; text-align: center; margin-bottom: 40px;">Here are the three natural supplements that comprise Pastor Adebayo's complete wellness protocol:</p>
+                
+                <div class="trinity-products">
+                    <div class="trinity-item">
+                        <span class="trinity-icon">🌿</span>
+                        <div class="trinity-name">Forever Aloe Vera Gel</div>
+                        <div class="trinity-description">
+                            <strong>You've Already Ordered This!</strong><br>
+                            99.7% pure inner leaf gel from organic aloe plants. Pharmaceutical-grade processing preserves maximum potency while removing bitter compounds. Supports healthy circulation, arterial cleansing, and natural blood pressure regulation. Mentioned biblically as one of the precious substances brought for Christ's burial.
+                        </div>
+                    </div>
+                    
+                    <div class="trinity-item">
+                        <span class="trinity-icon">🧄</span>
+                        <div class="trinity-name">Forever Garlic-Thyme</div>
+                        <div class="trinity-description">
+                            Biblical herbs mentioned throughout Scripture, concentrated for maximum effectiveness. Garlic supports healthy cholesterol levels and blood pressure, while thyme provides powerful antioxidant protection for your cardiovascular system. The biblical regulator that works in harmony with the other supplements.
+                        </div>
+                    </div>
+                    
+                    <div class="trinity-item">
+                        <span class="trinity-icon">🌊</span>
+                        <div class="trinity-name">Forever Arctic Sea (Omega-3)</div>
+                        <div class="trinity-description">
+                            Pure, molecularly distilled fish oil providing essential omega-3 fatty acids. Supports heart health, reduces inflammation, and helps maintain healthy blood pressure levels naturally. Following the biblical principle that God created sea creatures for our benefit.
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.8); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                    <p style="font-size: 1.3em; color: #1b5e20; text-align: center; margin: 0;"><strong>Like the Trinity in theology, these three work in perfect unity - each distinct in its purpose, yet creating a unified effect that supports comprehensive wellness.</strong></p>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <h3>Reports from Pastors Using the Complete Trinity System</h3>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "I started with just the Aloe Vera and felt some improvement. When I added the complete Trinity system, the difference was remarkable. My energy increased significantly and my overall sense of wellness improved dramatically."
+                        </div>
+                        <div class="testimonial-author">- Pastor Emmanuel O., Port Harcourt</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "The three supplements together provide comprehensive support that I never experienced with just one product. My doctor was impressed with my overall health improvements."
+                        </div>
+                        <div class="testimonial-author">- Pastor Grace M., Kano</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "Using God's Trinity of natural support has been a blessing. I feel more energetic for ministry and my family time, and my annual health checkups have been consistently positive."
+                        </div>
+                        <div class="testimonial-author">- Pastor David K., Abuja</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stewardship-section">
+                <h2>Wise Stewardship Investment</h2>
+                
+                <p>As pastors, we understand the principle of stewardship. When we invest in quality resources for our ministry, we see greater returns. The same principle applies to stewarding our health.</p>
+                
+                <p style="margin-top: 20px;">Rather than purchasing these supplements separately over time at regular prices, we'd like to offer you the opportunity to complete your Trinity system today at a significant stewardship discount.</p>
+                
+                <div class="biblical-insight">
+                    <p>📖 <em>"The plans of the diligent lead surely to abundance, but everyone who is hasty comes only to poverty"</em> - Proverbs 21:5<br><br>
+                    Wise planning and comprehensive approaches often yield better results than partial measures.</p>
+                </div>
+            </div>
+
+            <div class="investment-breakdown">
+                <h2>💰 The Complete Pastor's Heart Health System - Value Breakdown</h2>
+                
+                <div class="value-grid">
+                    <div class="value-item highlight">
+                        <div class="value-name">Forever Aloe Vera Gel (4 bottles - 4 month supply)</div>
+                        <div class="value-price">₦48,000</div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-name">Forever Garlic-Thyme (4 bottles - 4 month supply)</div>
+                        <div class="value-price">₦32,000</div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-name">Forever Arctic Sea (4 bottles - 4 month supply)</div>
+                        <div class="value-price">₦44,000</div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-name">Pastor's Protocol Guide (Digital)</div>
+                        <div class="value-price">₦15,000</div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-name">Certified Wellness Coach Support (4 months)</div>
+                        <div class="value-price">₦25,000</div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-name">Ministry Energy Maximization Training</div>
+                        <div class="value-price">₦37,000</div>
+                    </div>
+                    
+                    <div class="value-item total">
+                        <div class="value-name"><strong>TOTAL VALUE:</strong></div>
+                        <div class="value-price"><strong>₦201,000</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="urgency-section" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 40px; margin: 40px 0; border-radius: 20px; text-align: center;">
+                <h3 style="font-size: 2em; margin-bottom: 25px;">⏰ Limited Time Offer for Nigerian Pastors Only</h3>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">Due to import restrictions and limited stock, we can only accept 47 more pastors into this program this month. Once we reach capacity, the next opportunity won't be available until December 2024.</p>
+
+                <div class="countdown" style="display: flex; justify-content: center; gap: 30px; margin: 30px 0; flex-wrap: wrap;">
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; min-width: 100px;">
+                        <span class="countdown-number" id="hours" style="font-size: 2.5em; font-weight: bold; display: block;">23</span>
+                        <div class="countdown-label" style="font-size: 1.1em; margin-top: 5px;">Hours</div>
+                    </div>
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; min-width: 100px;">
+                        <span class="countdown-number" id="minutes" style="font-size: 2.5em; font-weight: bold; display: block;">47</span>
+                        <div class="countdown-label" style="font-size: 1.1em; margin-top: 5px;">Minutes</div>
+                    </div>
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; min-width: 100px;">
+                        <span class="countdown-number" id="spots" style="font-size: 2.5em; font-weight: bold; display: block;">47</span>
+                        <div class="countdown-label" style="font-size: 1.1em; margin-top: 5px;">Spots Left</div>
+                    </div>
+                </div>
+            </div>
+            <div class="special-offer">
+                <h2>🎯 Your Investment Today</h2>
+                
+                <div class="pricing-display">
+                    <div class="regular-price">Regular Price: ₦201,000</div>
+                    <div class="special-price">Pastor's Price: ₦89,500</div>
+                    <div class="savings-amount">You Save: ₦111,500 (55% Discount!)</div>
+                    
+                    <p style="margin: 25px 0; font-size: 1.1em;">Or 3 monthly payments of ₦29,833 (₦89,500 total)</p>
+                </div>
+                
+                <div class="action-section">
+                    <button class="complete-button" onclick="scrollToOrderForm()" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 25px 50px; font-size: 1.4em; font-weight: bold; border-radius: 60px; cursor: pointer; box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px;">
+                        🛒 YES! Give Me Pastor Adebayo's Complete Protocol
+                    </button>
+                    
+                    <p style="margin-top: 20px; font-size: 1.1em; opacity: 0.9; text-align: center;">*Free shipping anywhere in Nigeria • Secure payment • Ministry-friendly installments available</p>
+                </div>
+            </div>
+
+            <div class="bonus-section" style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); border: 3px solid #28a745; padding: 40px; margin: 40px 0; border-radius: 20px;">
+                <h3 style="color: #155724; font-size: 2em; margin-bottom: 25px; text-align: center;">🎁 Exclusive Bonuses for Nigerian Pastors</h3>
+                <p style="margin-bottom: 25px; font-size: 1.1em; text-align: center;">When you order today, you'll also receive these exclusive bonuses at no extra charge:</p>
+
+                <ul class="bonus-list" style="list-style: none; padding: 0;">
+                    <li style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; border-left: 4px solid #28a745;"><strong>The Pastor's Energy Maximization Guide</strong> - Complete guide including: Secret techniques for sustained energy during long services, conferences, and revival meetings; Biblical Nutrition for Ministry Leaders; and The Pastor's Quick Recovery Protocol (₦37,000 value)</li>
+                    <li style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; border-left: 4px solid #28a745;"><strong>Certified Wellness Coach Support</strong> - Direct access to certified wellness coaches who understand ministry demands (₦25,000 value)</li>
+                    <li style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; border-left: 4px solid #28a745;"><strong>Stress Management for Spiritual Leaders</strong> - Proven techniques for handling difficult congregants, financial pressure, and family demands (₦18,000 value)</li>
+                </ul>
+
+                <p style="margin-top: 25px; font-size: 1.2em; color: #155724; font-weight: bold; text-align: center;">Total Bonus Value: ₦80,000 - Yours FREE Today!</p>
+            </div>
+
+            <div class="guarantee">
+                <h3>🛡️ Pastor's Faith-Based Guarantee</h3>
+                <p style="font-size: 1.2em; line-height: 1.6; color: #0c5460;">
+                    <strong>"Test everything; hold fast what is good" - 1 Thessalonians 5:21</strong><br><br>
+                    Try Pastor Adebayo's complete protocol for 90 days. If you don't experience increased energy, better sleep, and improved vitality that enhances your ministry capacity, simply return the unused portion for a full refund. As men and women of God, our word is our bond.
+                </p>
+            </div>
+
+            <!-- Order Form Section -->
+            <div id="orderForm" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 50px 40px; margin: 50px 0; border-radius: 25px; border: 3px solid #28a745;">
+                <h2 style="color: #155724; text-align: center; font-size: 2.2em; margin-bottom: 40px;">📋 Secure Your Pastor's Heart Health System</h2>
+
+                <form id="healthSystemOrder" style="max-width: 600px; margin: 0 auto;">
+                    <div style="display: grid; gap: 25px;">
+                        <div style="display: flex; gap: 20px;">
+                            <div style="flex: 1;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Pastor's Full Name *</label>
+                                <input type="text" required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="Pastor John Adebayo">
+                            </div>
+                            <div style="flex: 1;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Phone Number *</label>
+                                <input type="tel" required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="+234 XXX XXX XXXX">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Email Address *</label>
+                            <input type="email" required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="pastor@church.org">
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Complete Delivery Address *</label>
+                            <textarea required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em; min-height: 100px; resize: vertical;" placeholder="Include: Street address, city, state, and any landmarks for easy delivery"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Church Name & Location</label>
+                            <input type="text" style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="Victory Baptist Church, Lagos">
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Payment Option *</label>
+                            <select required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;">
+                                <option value="">Choose your payment option...</option>
+                                <option value="full-payment">Full Payment - ₦89,500 (Save ₦5,000)</option>
+                                <option value="3-payments">3 Monthly Payments - ₦29,833 each</option>
+                                <option value="bank-transfer">Bank Transfer (5% discount)</option>
+                                <option value="pay-on-delivery">Pay on Delivery (+₦2,000)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Special Requests or Health Concerns</label>
+                            <textarea style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em; min-height: 80px; resize: vertical;" placeholder="Any specific health concerns or delivery instructions..."></textarea>
+                        </div>
+                        
+                        <div style="background: rgba(40, 167, 69, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95em; line-height: 1.4;">
+                                <input type="checkbox" required style="margin-top: 4px;">
+                                <span>I understand that these products are nutritional supplements, not medicines. I will consult with my healthcare provider before making any changes to my current medications. I acknowledge that individual results may vary and these products are not intended to diagnose, treat, cure, or prevent any disease.</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 20px 40px; font-size: 1.4em; font-weight: bold; border-radius: 50px; cursor: pointer; width: 100%; margin-top: 30px; box-shadow: 0 10px 30px rgba(40, 167, 69, 0.4); transition: all 0.3s ease;">
+                        🔒 SECURE MY HEART HEALTH SYSTEM NOW
+                    </button>
+                </form>
+
+                <div style="text-align: center; margin-top: 30px; color: #6c757d; font-size: 0.9em;">
+                    🔐 SSL Secured • 💳 Multiple Payment Options • 📦 Free Shipping • 🛡️ 90-Day Guarantee
+                </div>
+            </div>
+
+
+            <div class="biblical-insight" style="margin: 50px 0;">
+                <p style="font-size: 1.3em; text-align: center;"><strong>📖 "Therefore, I urge you, brothers and sisters, in view of God's mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship." - Romans 12:1</strong></p>
+                <p style="margin-top: 20px; text-align: center;">Your health is not separate from your ministry - it's the foundation that makes sustained, powerful ministry possible. Today, take the step that 200+ Nigerian pastors have already taken toward better stewardship of the temple God has given you.</p>
+            </div>
+
+            <div class="disclaimer">
+                <h4>⚠️ Important Health Information</h4>
+                <p><strong>These Forever Living products are nutritional supplements designed to support overall wellness as part of a healthy lifestyle. They are not medicines and are not intended to diagnose, treat, cure, or prevent any disease.</strong></p>
+                <p style="margin-top: 15px;"><strong>Always consult with your healthcare provider before starting any nutritional supplement program, especially if you have existing health conditions, are taking medications, or have concerns about interactions. Individual results may vary based on health status, lifestyle, and consistency of use.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToOrderForm() {
+            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Countdown timer functionality
+        function updateCountdown() {
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const spotsElement = document.getElementById('spots');
+            
+            if (hoursElement && minutesElement && spotsElement) {
+                let hours = parseInt(hoursElement.textContent);
+                let minutes = parseInt(minutesElement.textContent);
+                let spots = parseInt(spotsElement.textContent);
+                
+                minutes--;
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    if (hours < 0) {
+                        hours = 23;
+                        minutes = 59;
+                    }
+                }
+                
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                
+                // Randomly decrease spots occasionally
+                if (Math.random() < 0.1 && spots > 1) {
+                    spots--;
+                    spotsElement.textContent = spots;
+                }
+            }
+        }
+        
+        // Update countdown every minute
+        setInterval(updateCountdown, 60000);
+        
+        // Form submission handler
+        document.getElementById('healthSystemOrder').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Redirect to thank you page
+            window.location.href = 'thank-you.html';
+        });
+    </script>
+</body>
+</html>
