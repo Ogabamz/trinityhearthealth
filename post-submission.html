@@ -825,17 +825,14 @@
                     SPECIAL PASTOR'S PRICE
                 </div>
                 
-                <p style="font-size: 1.2em; margin: 30px 0; text-align: center;">Plus you get consistent supply for 2 full months.</p>
-                
                 <div class="urgency-timer">
                     <h3>⏰ This Introductory Price Expires In:</h3>
                     <div class="countdown-display" id="countdownDisplay">11:47:23</div>
-                    <p><strong>Only 23 Pastor Packs Remaining!</strong></p>
+                    <p>After that, price returns to ₦24,000</p>
+                    <p style="margin-top: 15px; font-size: 1.1em;"><strong>Only <span id="spotsLeft">23</span> Pastor Packs Remaining!</strong></p>
                 </div>
                 
-                <button type="button" class="order-button" onclick="scrollToOrder()">
-                    🛒 YES! I want to know more!
-                </button>
+            
                 
                 <div style="margin-top: 20px; opacity: 0.9;">
                     ✅ Free delivery anywhere in Nigeria<br>
@@ -921,31 +918,40 @@
 
     <script>
         // Countdown timer functionality
-        let timeLeft = 23 * 3600 + 47 * 60; // 23 hours 47 minutes in seconds
-        let spotsLeft = 47;
+        let timeLeft = 11 * 3600 + 47 * 60 + 23; // 11 hours 47 minutes 23 seconds
+        let spotsLeft = 23;
 
         function updateCountdown() {
             const hours = Math.floor(timeLeft / 3600);
             const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
             
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('spots').textContent = spotsLeft;
+            const countdownDisplay = document.getElementById('countdownDisplay');
+            const spotsElement = document.getElementById('spotsLeft');
+            
+            if (countdownDisplay) {
+                countdownDisplay.textContent = 
+                    hours.toString().padStart(2, '0') + ':' + 
+                    minutes.toString().padStart(2, '0') + ':' + 
+                    seconds.toString().padStart(2, '0');
+            }
+            
+            if (spotsElement) {
+                spotsElement.textContent = spotsLeft;
+            }
             
             if (timeLeft > 0) {
                 timeLeft--;
             }
             
-            // Randomly decrease spots
-            if (Math.random() < 0.001) { // Very small chance each second
-                if (spotsLeft > 10) {
-                    spotsLeft--;
-                }
+            // Randomly decrease spots occasionally
+            if (Math.random() < 0.1 && spotsLeft > 1) {
+                spotsLeft--;
             }
         }
 
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
+        // Update countdown every 30 minutes
+        setInterval(updateCountdown, 1800000);
 
         // Scroll to order form function
         function scrollToOrderForm() {
