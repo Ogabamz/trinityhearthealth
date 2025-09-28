@@ -915,7 +915,7 @@
         }
 
         // Form submission handling
-        document.getElementById('healthSystemOrder').addEventListener('submit', function(e) {
+        document.getElementById('sloOrderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = e.target.querySelector('button[type="submit"]');
@@ -927,19 +927,8 @@
             
             // Simulate order processing
             setTimeout(() => {
-                alert('🎉 SUCCESS! Your order has been received.\n\n📞 Our team will call you within 2 hours to confirm delivery details.\n\n📧 Check your email for order confirmation and instant access to your digital bonuses.\n\nGod bless your health journey, Pastor!');
-                
-                // Reset form
-                e.target.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Decrease available spots
-                if (spotsLeft > 1) {
-                    spotsLeft--;
-                }
-                
-            }, 3000);
+                window.location.href = 'one-time-offer.html';
+            }, 2000);
         });
 
         // Add smooth animations on scroll
