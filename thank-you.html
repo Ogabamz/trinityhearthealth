@@ -357,24 +357,11 @@
                     <button id="trackOrderBtn" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;">
                         📱 Track My Order on WhatsApp
                     </button>
-                    
-                    <button id="shareLinkBtn" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;">
-                        🔗 Share This Link
-                    </button>
                 </div>
                 
-                <p style="color: #6c757d; font-size: 0.9em; margin-bottom: 20px;">
-                    Help other pastors discover this life-changing protocol by sharing your experience
-                </p>
                 
-                <div style="background: rgba(37, 211, 102, 0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <p style="color: #128C7E; font-weight: bold; margin-bottom: 10px;">💡 Sharing Tip:</p>
-                    <p style="color: #666; font-size: 0.95em;">
-                        "I just ordered Pastor Adebayo's Heart Health Protocol. The transformation stories are incredible! 
-                        If you're a pastor looking to improve your health and ministry energy, you should check this out. 
-                        Here's the link: [LINK]"
-                    </p>
-                </div>
+                
+                
             </div>
 
             <div style="text-align: center; margin: 40px 0;">
@@ -385,10 +372,9 @@
 
     <script>
         // WhatsApp Order Tracking Button
-        document.getElementById('trackOrderBtn').addEventListener('click', function() {
-            const phoneNumber = '+234XXX XXX XXXX'; // Replace with actual WhatsApp number
+            const phoneNumber = '+2349063483741'; // Replace with actual WhatsApp number
             const message = encodeURIComponent('Hello! I would like to track my Pastor Adebayo Heart Health Protocol order. My order was just placed.');
-            const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${message}`;
+            const whatsappUrl = `https://wa.me/2349063483741?text=${message}`;
             window.open(whatsappUrl, '_blank');
         });
 
@@ -421,7 +407,7 @@
         });
 
         function openWhatsAppShare(message) {
-            const phoneNumber = '+234XXX XXX XXXX'; // Replace with actual WhatsApp number
+            const phoneNumber = '+2349063483741'; // Replace with actual WhatsApp number
             const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${message}`;
             window.open(whatsappUrl, '_blank');
         }

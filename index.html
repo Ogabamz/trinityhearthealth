@@ -453,7 +453,6 @@
             font-size: 2.5em;
             min-width: 60px;
         }
-        
         .transformation-results {
             background: linear-gradient(135deg, #fff9c4 0%, #f4e6a1 100%);
             padding: 40px;
@@ -827,7 +826,7 @@
                     </div>
                 </div>
                 
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="gate-form" id="contentGateForm" onsubmit="handleFormSubmission(event)">
+                <form action="#" method="POST" class="gate-form" id="contentGateForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="pastorName">Pastor's Full Name *</label>
@@ -836,13 +835,13 @@
                         
                         <div class="form-group">
                             <label for="whatsapp">WhatsApp Number *</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+234 XXX XXX XXXX">
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+2349063483741">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="churchDetails">Church Name & Location *</label>
-                        <input type="text" id="churchDetails" name="churchDetails" required placeholder="e.g., Victory Baptist Church, Ikeja Lagos">
+                        <label for="churchDetails"> Location *</label>
+                        <input type="text" id="churchDetails" name="churchDetails" required placeholder="e.g.,  Ikeja Lagos">
                     </div>
                     
                     <div class="form-group">
@@ -878,63 +877,58 @@
                         <small>🔒 Your information is secure and will never be shared with third parties.</small>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
+                <script>
+                // Google Apps Script Web App URL
+                const GOOGLE_SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwGii6ZTkEr5q5hRu0F9NVZVWHtuwFFf_cPkC04Ng1MnSPSy_eWI6CeY9GAVx2zAXoGaA/exec";
 
-    <script>
-        function handleFormSubmission(event) {
-            // Prevent the default form submission
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-            
-            // Show loading state
-            const submitBtn = event.target.querySelector('.unlock-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '⏳ PROCESSING YOUR REQUEST...';
-            submitBtn.disabled = true;
-            
-            // Simulate form processing (you can replace this with actual form submission)
-            setTimeout(() => {
-                // Store form data in sessionStorage for the post-submission page
-                sessionStorage.setItem('formData', JSON.stringify(formObject));
-                
-                // Redirect to post-submission page
-                window.location.href = 'post-submission.html';
-            }, 2000);
-            
-            // Optional: Actually submit to Formspree in the background
-            // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            //     method: 'POST',
-            //     body: formData
-            // }).then(response => {
-            //     if (response.ok) {
-            //         sessionStorage.setItem('formData', JSON.stringify(formObject));
-            //         window.location.href = 'post-submission.html';
-            //     } else {
-            //         alert('There was an error submitting the form. Please try again.');
-            //         submitBtn.innerHTML = originalText;
-            //         submitBtn.disabled = false;
-            //     }
-            // }).catch(error => {
-            //     console.error('Error:', error);
-            //     alert('There was an error submitting the form. Please try again.');
-            //     submitBtn.innerHTML = originalText;
-            //     submitBtn.disabled = false;
-            // });
-        }
-        
-        // Optional: Add smooth scrolling and animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add any additional page initialization here
-            console.log('Heart Health landing page loaded successfully');
-        });
-    </script>
-</body>
-</html>
+                document.getElementById('contentGateForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    const form = event.target;
+                    const formData = new FormData(form);
+                    const submitBtn = form.querySelector('.unlock-btn');
+                    const originalText = submitBtn.innerHTML;
+
+                    submitBtn.innerHTML = '⏳ PROCESSING YOUR REQUEST...';
+                    submitBtn.disabled = true;
+
+                    // Convert FormData to URL-encoded string
+                    const data = new URLSearchParams();
+                    for (const pair of formData) {
+                        data.append(pair[0], pair[1]);
+                    }
+
+                    fetch(GOOGLE_SHEET_SCRIPT_URL, {
+                        method: "POST",
+                        body: data,
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        }
+                    })
+                    .then(response => {
+                        // Try to parse JSON, but fallback to redirect if not JSON
+                        return response.json().catch(() => ({}));
+                    })
+                    .then(result => {
+                        // Store form data in sessionStorage for the post-submission page
+                        const formObject = {};
+                        formData.forEach((value, key) => {
+                            formObject[key] = value;
+                        });
+                        sessionStorage.setItem('formData', JSON.stringify(formObject));
+                        // Redirect to post-submission page
+                        window.location.href = 'post-submission.html';
+                    })
+                    .catch(error => {
+                        alert('There was an error submitting the form. Please try again.');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+
+                // Optional: Add smooth scrolling and animations
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Add any additional page initialization here
+                    console.log('Heart Health landing page loaded successfully');
+                });
+                </script>
