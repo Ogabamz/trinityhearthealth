@@ -768,7 +768,7 @@
                 
                 <div class="product-focus" style="margin-top: 35px;">
                     <div class="product-image-placeholder">
-                        🧴
+                        <img src="images/aloeveragel.png" alt="Forever Aloe Vera Gel" style="width: 100%; max-width: 400px; border-radius: 15px;">
                     </div>
                     
                     <h3 style="color: #2e7d32; font-size: 2.2em; margin-bottom: 25px; text-align: center;">Forever Living Aloe Vera Gel</h3>
@@ -828,10 +828,10 @@
                 <div class="urgency-timer">
                     <h3>⏰ This Introductory Price Expires In:</h3>
                     <div class="countdown-display" id="countdownDisplay">11:47:23</div>
-                    <p style="margin-top: 15px; font-size: 1.1em;"><strong>Only <span id="spotsLeft">23</span> Pastor Packs Remaining!</strong></p>
+                    <p style="margin-top: 15px; font-size: 1.1em;">
+                        <strong>Only <span id="spotsLeft">23</span> Pastor Packs Remaining!</strong>
+                    </p>
                 </div>
-                
-            
                 
                 <div style="margin-top: 20px; opacity: 0.9;">
                     ✅ Free delivery anywhere in Nigeria<br>
@@ -851,39 +851,39 @@
             <div class="order-form" id="orderForm">
                 <h3>📋 Secure Your 2-Bottle Pastor's Pack</h3>
                 
-                <form class="form-grid" id="sloOrderForm">
+                <form class="form-grid" id="sloOrderForm" action="https://formspree.io/f/xjkayvqr" method="POST">
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" required placeholder="Pastor John Adebayo">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="Full Name" required placeholder="Pastor John Adebayo">
                         </div>
                         <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" required placeholder="+234 XXX XXX XXXX">
+                            <label for="phoneNumber">Phone Number *</label>
+                            <input type="tel" id="phoneNumber" name="Phone Number" required placeholder="+23490123483741">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label>Personal Email Address *</label>
-                        <input type="email" required placeholder="adebayomichael@gmail.com">
+                        <label for="email">Personal Email Address *</label>
+                        <input type="email" id="email" name="Email" required placeholder="">
                     </div>
                     
                     <div class="form-group">
-                        <label>Complete Delivery Address *</label>
-                        <textarea required placeholder="Include: Street address, city, state, and any landmarks for easy delivery" rows="3"></textarea>
+                        <label for="deliveryAddress">Complete Delivery Address *</label>
+                        <textarea id="deliveryAddress" name="Delivery Address" required placeholder="Include: Street address, city, state, and any landmarks for easy delivery" rows="3"></textarea>
                     </div>
                     
-    
-                    
                     <div class="form-group">
-                        <label>Payment Option *</label>
-                        <select required>
+                        <label for="paymentOption">Payment Option *</label>
+                        <select id="paymentOption" name="Payment Option" required>
                             <option value="">Choose payment method...</option>
                             <option value="bank-transfer">Bank Transfer (₦88,450)</option>
                             <option value="pay-on-delivery">Pay on Delivery (₦90,450)</option>
                         </select>
                     </div>
                     
+                    <!-- Hidden field to indicate 2 bottles of Aloe Vera Gel -->
+                    <input type="hidden" name="Order Details" value="2 bottles of Aloe Vera Gel">
                    
                     <button type="submit" class="order-button" style="width: 100%; margin-top: 20px;">
                         🔒 YES! SECURE MY 2-BOTTLE PACK NOW! - ₦88,450
@@ -895,8 +895,6 @@
                 </div>
             </div>
 
-                
-
             <div class="disclaimer">
                 <h4>⚠️ Health Disclaimer</h4>
                 <p style="margin-top: 15px;"><strong>Always consult with your healthcare provider before starting any nutritional supplement program, especially if you have existing health conditions, are taking medications, or are pregnant or nursing. Individual results may vary based on health status, lifestyle, and consistency of use.</strong></p>
@@ -906,70 +904,88 @@
     </div>
 
     <script>
-        // Countdown timer functionality
-        let timeLeft = 11 * 3600 + 47 * 60 + 23; // 11 hours 47 minutes 23 seconds
-        let spotsLeft = 23;
+        // --- Countdown Timer and Spots Logic ---
+        // Set initial countdown (11:47:23)
+        let timeLeft = 11 * 3600 + 47 * 60 + 23;
 
         function updateCountdown() {
+            // Countdown
             const hours = Math.floor(timeLeft / 3600);
             const minutes = Math.floor((timeLeft % 3600) / 60);
             const seconds = timeLeft % 60;
-            
             const countdownDisplay = document.getElementById('countdownDisplay');
-            const spotsElement = document.getElementById('spotsLeft');
-            
             if (countdownDisplay) {
-                countdownDisplay.textContent = 
-                    hours.toString().padStart(2, '0') + ':' + 
-                    minutes.toString().padStart(2, '0') + ':' + 
+                countdownDisplay.textContent =
+                    hours.toString().padStart(2, '0') + ':' +
+                    minutes.toString().padStart(2, '0') + ':' +
                     seconds.toString().padStart(2, '0');
             }
-            
-            if (spotsElement) {
-                spotsElement.textContent = spotsLeft;
-            }
-            
-            if (timeLeft > 0) {
-                timeLeft--;
-            }
-            
-            // Randomly decrease spots occasionally
-            if (Math.random() < 0.1 && spotsLeft > 1) {
+            if (timeLeft > 0) timeLeft--;
+        }
+
+        // Initial update and then every second for countdown
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Initialize spots counter
+        let spotsLeft = 23;
+        const spotsElement = document.getElementById('spotsLeft');
+        if(spotsElement) {
+            spotsElement.textContent = spotsLeft;
+        }
+
+        // Update display
+        function updateSpots() {
+            if (spotsLeft > 1) {
                 spotsLeft--;
+                if(spotsElement) {
+                    spotsElement.textContent = spotsLeft;
+                }
             }
         }
 
-        // Update countdown every 30 minutes
-        setInterval(updateCountdown, 1800000);
+        // Decrease spots every 30 minutes (1800000 milliseconds)
+        setInterval(updateSpots, 1800000);
 
-        // Scroll to order form function
+        // --- Scroll to order form function ---
         function scrollToOrderForm() {
-            document.getElementById('orderForm').scrollIntoView({ 
+            document.getElementById('orderForm').scrollIntoView({
                 behavior: 'smooth',
-                block: 'start' 
+                block: 'start'
             });
         }
 
-        // Form submission handling
+        // --- Form submission handling ---
         document.getElementById('sloOrderForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
-            // Show processing state
-            submitBtn.innerHTML = '⏳ Processing Your Order...';
+            submitBtn.innerHTML = '⏳ Saving Your Details...';
             submitBtn.disabled = true;
-            
-            // Simulate order processing
-            setTimeout(() => {
+
+            // Capture form data into an object
+            const formData = new FormData(form);
+            const orderData = {};
+            formData.forEach((value, key) => {
+                orderData[key] = value;
+            });
+
+            // Save the order data to localStorage
+            try {
+                localStorage.setItem('pendingOrder', JSON.stringify(orderData));
+                // Redirect to the one-time offer page
                 window.location.href = 'one-time-offer.html';
-            }, 2000);
+            } catch (error) {
+                console.error('Error saving to localStorage:', error);
+                alert('There was a problem proceeding to the next step. Please try again.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
 
-        // Add smooth animations on scroll
+        // --- Add smooth animations on scroll ---
         const observeElements = document.querySelectorAll('.domino-section, .product-reveal, .value-stack, .cta-section');
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -978,7 +994,6 @@
                 }
             });
         }, { threshold: 0.1 });
-
         observeElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';

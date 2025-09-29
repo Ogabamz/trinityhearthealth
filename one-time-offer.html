@@ -571,6 +571,10 @@
     </style>
 </head>
 <body>
+    <div id="loading" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing your order, please wait...</p>
+    </div>
     <div class="container">
         <div class="blessing-banner">
             Blessings Pastor! Thank you for taking the first step toward better health stewardship
@@ -611,6 +615,10 @@
             </div>
 
             <div class="trinity-system">
+                <!-- Heart Health Pack Banner Image -->
+                <div style="text-align: center; margin-bottom: 35px;">
+                    <img src="images\heart-health-pack.png" alt="Pastor's Heart Health Trinity Pack" style="max-width: 420px; width: 100%; border-radius: 18px; box-shadow: 0 8px 32px rgba(40, 167, 69, 0.18); border: 4px solid #e8f5e8;">
+                </div>
                 <h2>The Heart Health Trinity System</h2>
                 
                 <p style="font-size: 1.3em; text-align: center; margin-bottom: 40px;">Here are the three natural supplements that comprise Pastor Adebayo's complete wellness protocol:</p>
@@ -758,27 +766,16 @@
                     </div>
                 </div>
                 <div class="action-section">
-                    <button class="complete-button" onclick="scrollToOrderForm()" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 25px 50px; font-size: 1.4em; font-weight: bold; border-radius: 60px; cursor: pointer; box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px;">
+                    <button id="yes-button" class="complete-button" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 25px 50px; font-size: 1.4em; font-weight: bold; border-radius: 60px; cursor: pointer; box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px;">
                         🛒 YES! Give Me Pastor Adebayo's Complete Protocol
                     </button>
-                    <a href="thank-you.html" class="continue-button">No, Thank You. I'll Stick With The Initial Offer</a>
+                    <button id="no-button" class="continue-button">No, Thank You. I'll Stick With The Initial Offer</button>
                     
                     <p style="margin-top: 20px; font-size: 1.1em; opacity: 0.9; text-align: center;">*Free shipping anywhere in Nigeria • Secure payment • Ministry-friendly installments available</p>
                 </div>
             </div>
 
-            <div class="bonus-section" style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); border: 3px solid #28a745; padding: 40px; margin: 40px 0; border-radius: 20px;">
-                <h3 style="color: #155724; font-size: 2em; margin-bottom: 25px; text-align: center;">🎁 Exclusive Bonuses for Nigerian Pastors</h3>
-                <p style="margin-bottom: 25px; font-size: 1.1em; text-align: center;">When you order today, you'll also receive these exclusive bonuses at no extra charge:</p>
-
-                <ul class="bonus-list" style="list-style: none; padding: 0;">
-                    <li style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; border-left: 4px solid #28a745;"><strong>The Pastor's Energy Maximization Guide</strong> - Complete guide including: Secret techniques for sustained energy during long services, conferences, and revival meetings; Biblical Nutrition for Ministry Leaders; and The Pastor's Quick Recovery Protocol (₦37,000 value)</li>
-                    <li style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; border-left: 4px solid #28a745;"><strong>Certified Wellness Coach Support</strong> - Direct access to certified wellness coaches who understand ministry demands (₦25,000 value)</li>
-                    <li style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; border-left: 4px solid #28a745;"><strong>Stress Management for Spiritual Leaders</strong> - Proven techniques for handling difficult congregants, financial pressure, and family demands (₦18,000 value)</li>
-                </ul>
-
-                <p style="margin-top: 25px; font-size: 1.2em; color: #155724; font-weight: bold; text-align: center;">Total Bonus Value: ₦80,000 - Yours FREE Today!</p>
-            </div>
+        
 
             <div class="guarantee">
                 <h3>🛡️ Our Commitment to Your Success</h3>
@@ -788,62 +785,7 @@
                 </p>
             </div>
 
-            <!-- Order Form Section -->
-            <div id="orderForm" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 50px 40px; margin: 50px 0; border-radius: 25px; border: 3px solid #28a745;">
-                <h2 style="color: #155724; text-align: center; font-size: 2.2em; margin-bottom: 40px;">📋 Secure Your Pastor's Heart Health System</h2>
-
-                <form id="healthSystemOrder" style="max-width: 600px; margin: 0 auto;">
-                    <div style="display: grid; gap: 25px;">
-                        <div style="display: flex; gap: 20px;">
-                            <div style="flex: 1;">
-                                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Full Name *</label>
-                                <input type="text" required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="Pastor John Adebayo">
-                            </div>
-                            <div style="flex: 1;">
-                                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Phone Number *</label>
-                                <input type="tel" required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="+234 XXX XXX XXXX">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Email Address *</label>
-                            <input type="email" required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;" placeholder="adebayomichael@gmail.com">
-                        </div>
-                        
-                        <div>
-                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Complete Delivery Address *</label>
-                            <textarea required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em; min-height: 100px; resize: vertical;" placeholder="Include: Street address, city, state, and any landmarks for easy delivery"></textarea>
-                        </div>
-                        
-    
-                        
-                        <div>
-                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Payment Option *</label>
-                            <select required style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em;">
-                                <option value="">Choose your payment option...</option>
-                                <option value="full-payment">Full Payment - ₦136,000</option>
-                                <option value="bank-transfer">Bank Transfer</option>
-                                <option value="pay-on-delivery">Pay on Delivery (+₦2,000)</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #155724;">Special Requests or Health Concerns</label>
-                            <textarea style="width: 100%; padding: 15px; border: 2px solid #28a745; border-radius: 8px; font-size: 1.1em; min-height: 80px; resize: vertical;" placeholder="Any specific health concerns or delivery instructions..."></textarea>
-                        </div>
-                        
-                        
-                    </div>
-                    
-                    <button type="submit" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 20px 40px; font-size: 1.4em; font-weight: bold; border-radius: 50px; cursor: pointer; width: 100%; margin-top: 30px; box-shadow: 0 10px 30px rgba(40, 167, 69, 0.4); transition: all 0.3s ease;">
-                        🔒 SECURE MY HEART HEALTH SYSTEM NOW
-                    </button>
-                </form>
-
-                <div style="text-align: center; margin-top: 30px; color: #6c757d; font-size: 0.9em;">
-                    🔐 SSL Secured • 💳 Multiple Payment Options • 📦 Free Shipping • 🤝 Ongoing Support
-                </div>
-            </div>
+            <!-- Order form removed by Gemini for seamless upsell flow -->
 
 
             <div class="biblical-insight" style="margin: 50px 0;">
@@ -851,29 +793,19 @@
                 <p style="margin-top: 20px; text-align: center;">Your health is not separate from your ministry - it's the foundation that makes sustained, powerful ministry possible. Today, take the step that 200+ Nigerian pastors have already taken toward better stewardship of the temple God has given you.</p>
             </div>
 
-            <div class="disclaimer">
-                <h4>⚠️ Important Health Information</h4>
-                <p><strong>These Forever Living products are nutritional supplements designed to support overall wellness as part of a healthy lifestyle. They are not medicines and are not intended to diagnose, treat, cure, or prevent any disease.</strong></p>
-                <p style="margin-top: 15px;"><strong>Always consult with your healthcare provider before starting any nutritional supplement program, especially if you have existing health conditions, are taking medications, or have concerns about interactions. Individual results may vary based on health status, lifestyle, and consistency of use.</strong></p>
-            </div>
+            
         </div>
     </div>
 
     <script>
-        function scrollToOrderForm() {
-            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Countdown timer functionality
+        // Countdown timer functionality (from original file)
         function updateCountdown() {
             const hoursElement = document.getElementById('hours');
             const minutesElement = document.getElementById('minutes');
-            const spotsElement = document.getElementById('spots');
             
-            if (hoursElement && minutesElement && spotsElement) {
+            if (hoursElement && minutesElement) {
                 let hours = parseInt(hoursElement.textContent);
                 let minutes = parseInt(minutesElement.textContent);
-                let spots = parseInt(spotsElement.textContent);
                 
                 minutes--;
                 if (minutes < 0) {
@@ -887,23 +819,65 @@
                 
                 hoursElement.textContent = hours.toString().padStart(2, '0');
                 minutesElement.textContent = minutes.toString().padStart(2, '0');
-                
-                // Randomly decrease spots occasionally
-                if (Math.random() < 0.1 && spots > 1) {
-                    spots--;
-                    spotsElement.textContent = spots;
-                }
             }
         }
-        
-        // Update countdown every minute
         setInterval(updateCountdown, 60000);
-        
-        // Form submission handler
-        document.getElementById('healthSystemOrder').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Redirect to thank you page
-            window.location.href = 'thank-you.html';
+
+        // New seamless upsell logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const yesButton = document.getElementById('yes-button');
+            const noButton = document.getElementById('no-button');
+            const loadingOverlay = document.getElementById('loading');
+
+            const storedOrder = localStorage.getItem('pendingOrder');
+
+            if (!storedOrder) {
+                // If no order data is found, redirect back to the form page to be safe
+                window.location.href = 'post-submission.html';
+                return;
+            }
+
+            const orderData = JSON.parse(storedOrder);
+            const formspreeEndpoint = 'https://formspree.io/f/xjkayvqr';
+
+            const submitOrder = (isUpgrade) => {
+                loadingOverlay.style.display = 'flex';
+
+                const finalOrder = new FormData();
+                for (const key in orderData) {
+                    finalOrder.append(key, orderData[key]);
+                }
+
+                if (isUpgrade) {
+                    finalOrder.set('Order Details', 'UPGRADE: Full Pastor\'s Heart Health System (Aloe + Garlic + Arctic Sea)');
+                    finalOrder.set('Final Price', '₦136,000');
+                } else {
+                    // Keep the original order details
+                    finalOrder.set('Order Details', 'BASE: 2 bottles of Aloe Vera Gel');
+                }
+
+                fetch(formspreeEndpoint, {
+                    method: 'POST',
+                    body: finalOrder,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        localStorage.removeItem('pendingOrder'); // Clean up local storage
+                        window.location.href = 'thank-you.html';
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Form submission error:', error);
+                    loadingOverlay.style.display = 'none';
+                    alert('There was a problem processing your order. Please go back and try again.');
+                });
+            };
+
+            yesButton.addEventListener('click', () => submitOrder(true));
+            noButton.addEventListener('click', () => submitOrder(false));
         });
     </script>
 </body>
