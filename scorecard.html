@@ -443,18 +443,6 @@
           return;
         }
 
-        // Calculate and store results privately (not displayed)
-        const score = calculateScore();
-        localStorage.setItem('heartHealthScore', score);
-        localStorage.setItem('assessmentAnswers', JSON.stringify(Array.from(selects).map(s => ({name: s.name, value: s.value}))));
-
-        // Track assessment completion with a standard event (no sensitive params)
-        try {
-          if (typeof fbq === 'function') {
-            fbq('track', 'CompleteRegistration');
-          }
-        } catch (e) {}
-
         // Copy assessment answers to hidden fields
         for (let i = 1; i <= 20; i++) {
           const questionSelect = document.querySelector(`select[name="q${i}"]`);
@@ -474,26 +462,7 @@
       pastorInfoSection.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Store form data
-        const formData = new FormData(this);
-        const userData = {};
-        formData.forEach((value, key) => {
-          userData[key] = value;
-        });
-        
-        // Add assessment results
-        userData.heartHealthScore = localStorage.getItem('heartHealthScore');
-        userData.assessmentAnswers = localStorage.getItem('assessmentAnswers');
-        
-        // Store all data
-        localStorage.setItem('userAssessmentData', JSON.stringify(userData));
-        
         // Redirect to post-submission page
-        try {
-          if (typeof fbq === 'function') {
-            fbq('track', 'Lead');
-          }
-        } catch (e) {}
         window.location.href = 'post-submission.html';
       });
     });
