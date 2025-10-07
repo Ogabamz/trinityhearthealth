@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trinity Heart Health Scorecard</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <title>Meta Pixel Test Page</title>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
   <!-- Meta Pixel Code -->
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -21,84 +20,11 @@
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"/></noscript>
+    src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <!-- Header -->
-  <header class="bg-red-700 text-white py-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-3xl font-bold">Trinity Heart Health Scorecard</h1>
-      <p class="mt-2 text-lg">Pastor, check your heart health stewardship in just 3 minutes</p>
-    </div>
-  </header>
-
-  <!-- Main Section -->
-  <main class="max-w-3xl mx-auto px-4 py-10">
-    <div id="formContainer"></div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 mt-10">
-    <div class="max-w-3xl mx-auto text-center">
-      <p>&copy; 2025 Trinity Heart Health. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const formContainer = document.getElementById('formContainer');
-
-      // Load the form dynamically for better maintainability
-      fetch('assessment-form.html')
-        .then(response => response.text())
-        .then(html => {
-          formContainer.innerHTML = html;
-          const submitBtn = document.getElementById('submitBtn');
-          const assessmentQuestions = document.getElementById('assessmentQuestions');
-          const pastorInfoSection = document.getElementById('pastorInfoSection');
-
-          // --- Core Logic ---
-          submitBtn.addEventListener('click', function() {
-            const selects = assessmentQuestions.querySelectorAll('select[name^="q"]');
-            let allAnswered = true;
-            for (let select of selects) {
-              if (!select.value) {
-                allAnswered = false;
-                select.classList.add('border-red-500');
-              } else {
-                select.classList.remove('border-red-500');
-              }
-            }
-
-            if (!allAnswered) {
-              alert('Please answer all questions before submitting.');
-              return;
-            }
-
-            for (let i = 1; i <= 20; i++) {
-              const questionSelect = document.querySelector(`select[name="q${i}"]`);
-              const hiddenField = document.getElementById(`hidden_q${i}`);
-              if (questionSelect && hiddenField) {
-                hiddenField.value = questionSelect.value;
-              }
-            }
-
-            assessmentQuestions.style.display = 'none';
-            pastorInfoSection.style.display = 'block';
-            pastorInfoSection.scrollIntoView({ behavior: 'smooth' });
-          });
-
-          pastorInfoSection.addEventListener('submit', function(e) {
-            e.preventDefault();
-            window.location.href = 'post-submission.html';
-          });
-        })
-        .catch(err => {
-          formContainer.innerHTML = `<p class='text-red-600'>Error loading form. Please refresh the page.</p>`;
-          console.error(err);
-        });
-    });
-  </script>
+<body>
+  <h1>Meta Pixel Test Page</h1>
+  <p>If everything is working, your pixel should record a PageView event in Meta Events Manager.</p>
 </body>
 </html>
