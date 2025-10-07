@@ -251,21 +251,21 @@
     </style>
 <!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '31576639681951470');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '31576639681951470');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
@@ -389,66 +389,27 @@ src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"
     </div>
 
     <script>
-        // WhatsApp Order Tracking Button
-            const phoneNumber = '+2349063483741'; // Replace with actual WhatsApp number
-            const message = encodeURIComponent('Hello! I would like to track my Pastor Adebayo Heart Health Protocol order. My order was just placed.');
-            const whatsappUrl = `https://wa.me/2349063483741?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        });
-
-        // Share Link Button
-        document.getElementById('shareLinkBtn').addEventListener('click', function() {
-            const currentUrl = window.location.origin + '/try.html';
-            const shareMessage = encodeURIComponent(`I just ordered Pastor Adebayo's Heart Health Protocol. The transformation stories are incredible! If you're a pastor looking to improve your health and ministry energy, you should check this out. Here's the link: ${currentUrl}`);
-            
-            // Try to copy to clipboard first
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(currentUrl).then(function() {
-                    // Show success message
-                    const button = document.getElementById('shareLinkBtn');
-                    const originalText = button.innerHTML;
-                    button.innerHTML = '✅ Link Copied!';
-                    button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
-                    
-                    setTimeout(function() {
-                        button.innerHTML = originalText;
-                        button.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
-                    }, 2000);
-                }).catch(function() {
-                    // Fallback to WhatsApp
-                    openWhatsAppShare(shareMessage);
+        // Initialize interactive behaviors when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // WhatsApp Order Tracking Button (trigger on click, not automatically)
+            const trackBtn = document.getElementById('trackOrderBtn');
+            if (trackBtn) {
+                trackBtn.addEventListener('click', function() {
+                    const message = encodeURIComponent('Hello! I would like to track my Pastor Adebayo Heart Health Protocol order. My order was just placed.');
+                    const whatsappUrl = `https://wa.me/2349063483741?text=${message}`;
+                    window.open(whatsappUrl, '_blank');
                 });
-            } else {
-                // Fallback to WhatsApp
-                openWhatsAppShare(shareMessage);
+
+                // Hover effects for button
+                trackBtn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 12px 35px rgba(37, 211, 102, 0.6)';
+                });
+                trackBtn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 8px 25px rgba(37, 211, 102, 0.4)';
+                });
             }
-        });
-
-        function openWhatsAppShare(message) {
-            const phoneNumber = '+2349063483741'; // Replace with actual WhatsApp number
-            const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Add hover effects for buttons
-        document.getElementById('trackOrderBtn').addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 12px 35px rgba(37, 211, 102, 0.6)';
-        });
-
-        document.getElementById('trackOrderBtn').addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 8px 25px rgba(37, 211, 102, 0.4)';
-        });
-
-        document.getElementById('shareLinkBtn').addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 12px 35px rgba(37, 211, 102, 0.6)';
-        });
-
-        document.getElementById('shareLinkBtn').addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 8px 25px rgba(37, 211, 102, 0.4)';
         });
     </script>
 </body>
