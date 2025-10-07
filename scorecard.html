@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trinity Heart Health Scorecard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="bg-red-700 text-white py-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-3xl font-bold">Trinity Heart Health Scorecard</h1>
+      <p class="mt-2 text-lg">Pastor, check your heart health stewardship in just 3 minutes</p>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <!-- Intro -->
+    <div class="bg-white shadow-lg rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-3">Why take this assessment?</h2>
+      <p class="mb-4">Your calling demands strength, stamina, and longevity. This scorecard will help you identify where you stand today and what steps you can take to preserve your health for many more years of service. It's quick, practical, and rooted in wisdom for everyday living.</p>
+      <p class="font-medium">Answer honestly. Your results are private and will be shared with you directly on WhatsApp.</p>
+    </div>
+
+    <!-- Assessment Form -->
+    <div class="bg-white shadow-lg rounded-xl p-6 space-y-6">
+      <h2 class="text-lg font-semibold mb-4">Start Your Assessment</h2>
+
+      <!-- The 20 Questions -->
+      <div id="assessmentQuestions">
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">1. How often do you feel short of breath during or after preaching?</label>
+          <select name="q1" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">2. Do you regularly experience dizziness, headaches, or chest tightness?</label>
+          <select name="q2" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">3. How many hours of restful sleep do you get each night?</label>
+          <select name="q3" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Less than 4</option><option>4-5</option><option>6</option><option>7</option><option>8 or more</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">4. How often do you feel fully energized when you wake up in the morning?</label>
+          <select name="q4" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">5. How would you rate your stamina during long services (2+ hours)?</label>
+          <select name="q5" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Very Poor</option><option>Poor</option><option>Average</option><option>Good</option><option>Excellent</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">6. How many days a week do you eat fresh fruits and vegetables?</label>
+          <select name="q6" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>0 days</option><option>1-2 days</option><option>3-4 days</option><option>5-6 days</option><option>Daily</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">7. Do you regularly eat fried or processed foods (meat pies, suya, puff-puff, etc.)?</label>
+          <select name="q7" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">8. How often do you drink at least 2 liters of water daily?</label>
+          <select name="q8" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">9. Do you take supplements (vitamins, herbs, or natural remedies) consistently?</label>
+          <select name="q9" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">10. How often do you eat late at night after church activities?</label>
+          <select name="q10" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">11. How often do you feel overwhelmed by ministry responsibilities?</label>
+          <select name="q11" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">12. Do you set aside time for rest and recovery each week?</label>
+          <select name="q12" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">13. How often do you pray specifically for your health and strength?</label>
+          <select name="q13" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">14. Do you believe poor health could limit your ability to fulfill your calling?</label>
+          <select name="q14" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Strongly Disagree</option><option>Disagree</option><option>Neutral</option><option>Agree</option><option>Strongly Agree</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">15. How often do you teach your congregation about health stewardship?</label>
+          <select name="q15" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Always</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">16. How confident are you that you can preach actively for the next 10 years?</label>
+          <select name="q16" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Not Confident</option><option>Slightly Confident</option><option>Moderately Confident</option><option>Confident</option><option>Very Confident</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">17. Do you have a family history of high blood pressure, stroke, or heart disease?</label>
+          <select name="q17" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>No</option><option>Yes, minor</option><option>Yes, moderate</option><option>Yes, severe</option><option>Not Sure</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">18. How often do you go for medical checkups or BP monitoring?</label>
+          <select name="q18" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option><option>Regularly</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">19. How prepared is your ministry to continue smoothly if your health fails temporarily?</label>
+          <select name="q19" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Not Prepared</option><option>Slightly Prepared</option><option>Moderately Prepared</option><option>Well Prepared</option><option>Fully Prepared</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">20. Do you see yourself still preaching actively past the age of 70?</label>
+          <select name="q20" class="w-full border rounded-lg p-2" required>
+            <option value="">Select an option</option>
+            <option>Not at all</option><option>Unlikely</option><option>Not Sure</option><option>Likely</option><option>Definitely</option>
+          </select>
+        </div>
+        
+        <div class="text-center">
+          <button type="button" id="submitBtn" class="bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-3 rounded-xl shadow-lg">Submit Assessment</button>
+        </div>
+      </div>
+
+      <!-- Pastor Info Section (Hidden initially) -->
+      <form id="pastorInfoSection" action="post-submission.html" method="POST" style="display: none;">
+        <h3 class="text-lg font-semibold mb-4">Your Personal Information</h3>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">Full Name (Pastor)</label>
+          <input type="text" name="pastorName" class="w-full border rounded-lg p-2" placeholder="Enter your full name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">WhatsApp Number</label>
+          <input type="text" name="whatsapp" class="w-full border rounded-lg p-2" placeholder="e.g. 0803 123 4567" required>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">Your Location</label>
+          <input type="text" name="location" class="w-full border rounded-lg p-2" placeholder="City, State" required>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-medium">Years in Ministry</label>
+          <input type="number" name="yearsMinistry" class="w-full border rounded-lg p-2" placeholder="e.g. 15" required min="1" step="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/^0+/, '');">
+        </div>
+        
+        <!-- Hidden fields to pass assessment answers -->
+        <input type="hidden" name="q1" id="hidden_q1">
+        <input type="hidden" name="q2" id="hidden_q2">
+        <input type="hidden" name="q3" id="hidden_q3">
+        <input type="hidden" name="q4" id="hidden_q4">
+        <input type="hidden" name="q5" id="hidden_q5">
+        <input type="hidden" name="q6" id="hidden_q6">
+        <input type="hidden" name="q7" id="hidden_q7">
+        <input type="hidden" name="q8" id="hidden_q8">
+        <input type="hidden" name="q9" id="hidden_q9">
+        <input type="hidden" name="q10" id="hidden_q10">
+        <input type="hidden" name="q11" id="hidden_q11">
+        <input type="hidden" name="q12" id="hidden_q12">
+        <input type="hidden" name="q13" id="hidden_q13">
+        <input type="hidden" name="q14" id="hidden_q14">
+        <input type="hidden" name="q15" id="hidden_q15">
+        <input type="hidden" name="q16" id="hidden_q16">
+        <input type="hidden" name="q17" id="hidden_q17">
+        <input type="hidden" name="q18" id="hidden_q18">
+        <input type="hidden" name="q19" id="hidden_q19">
+        <input type="hidden" name="q20" id="hidden_q20">
+
+        <div class="text-center">
+          <button type="submit" class="bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-xl shadow-lg">Submit & See My Results</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-6 text-sm text-gray-600">
+      <p><strong>Disclaimer:</strong> This scorecard is not a medical diagnosis. It is a tool to help you reflect on your health stewardship. For serious symptoms, consult a doctor.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <p>&copy; 2025 Trinity Heart Health. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const submitBtn = document.getElementById('submitBtn');
+      const assessmentQuestions = document.getElementById('assessmentQuestions');
+      const pastorInfoSection = document.getElementById('pastorInfoSection');
+
+      // Calculate heart health score
+      function calculateScore() {
+        const selects = assessmentQuestions.querySelectorAll('select[name^="q"]');
+        let score = 0;
+        let totalQuestions = 0;
+        
+        for (let select of selects) {
+          if (select.value) {
+            totalQuestions++;
+            const value = select.value;
+            
+            // Scoring logic based on question type
+            switch(select.name) {
+              case 'q1': // Shortness of breath
+                if (value === 'Never') score += 5;
+                else if (value === 'Rarely') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Often') score += 2;
+                else if (value === 'Always') score += 1;
+                break;
+              case 'q2': // Dizziness, headaches, chest tightness
+                if (value === 'Never') score += 5;
+                else if (value === 'Rarely') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Often') score += 2;
+                else if (value === 'Always') score += 1;
+                break;
+              case 'q3': // Hours of sleep
+                if (value === '8 or more') score += 5;
+                else if (value === '7') score += 4;
+                else if (value === '6') score += 3;
+                else if (value === '4-5') score += 2;
+                else if (value === 'Less than 4') score += 1;
+                break;
+              case 'q4': // Morning energy
+                if (value === 'Always') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q5': // Stamina during long services
+                if (value === 'Excellent') score += 5;
+                else if (value === 'Good') score += 4;
+                else if (value === 'Average') score += 3;
+                else if (value === 'Poor') score += 2;
+                else if (value === 'Very Poor') score += 1;
+                break;
+              case 'q6': // Fruits and vegetables
+                if (value === 'Daily') score += 5;
+                else if (value === '5-6 days') score += 4;
+                else if (value === '3-4 days') score += 3;
+                else if (value === '1-2 days') score += 2;
+                else if (value === '0 days') score += 1;
+                break;
+              case 'q7': // Fried/processed foods
+                if (value === 'Never') score += 5;
+                else if (value === 'Rarely') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Often') score += 2;
+                else if (value === 'Always') score += 1;
+                break;
+              case 'q8': // Water intake
+                if (value === 'Always') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q9': // Supplements
+                if (value === 'Always') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q10': // Late night eating
+                if (value === 'Never') score += 5;
+                else if (value === 'Rarely') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Often') score += 2;
+                else if (value === 'Always') score += 1;
+                break;
+              case 'q11': // Overwhelmed by ministry
+                if (value === 'Never') score += 5;
+                else if (value === 'Rarely') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Often') score += 2;
+                else if (value === 'Always') score += 1;
+                break;
+              case 'q12': // Rest and recovery
+                if (value === 'Always') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q13': // Prayer for health
+                if (value === 'Always') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q14': // Belief about health limiting calling
+                if (value === 'Strongly Agree') score += 5;
+                else if (value === 'Agree') score += 4;
+                else if (value === 'Neutral') score += 3;
+                else if (value === 'Disagree') score += 2;
+                else if (value === 'Strongly Disagree') score += 1;
+                break;
+              case 'q15': // Teaching about health
+                if (value === 'Always') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q16': // Confidence in preaching 10 years
+                if (value === 'Very Confident') score += 5;
+                else if (value === 'Confident') score += 4;
+                else if (value === 'Moderately Confident') score += 3;
+                else if (value === 'Slightly Confident') score += 2;
+                else if (value === 'Not Confident') score += 1;
+                break;
+              case 'q17': // Family history
+                if (value === 'No') score += 5;
+                else if (value === 'Not Sure') score += 3;
+                else if (value === 'Yes, minor') score += 4;
+                else if (value === 'Yes, moderate') score += 2;
+                else if (value === 'Yes, severe') score += 1;
+                break;
+              case 'q18': // Medical checkups
+                if (value === 'Regularly') score += 5;
+                else if (value === 'Often') score += 4;
+                else if (value === 'Sometimes') score += 3;
+                else if (value === 'Rarely') score += 2;
+                else if (value === 'Never') score += 1;
+                break;
+              case 'q19': // Ministry preparedness
+                if (value === 'Fully Prepared') score += 5;
+                else if (value === 'Well Prepared') score += 4;
+                else if (value === 'Moderately Prepared') score += 3;
+                else if (value === 'Slightly Prepared') score += 2;
+                else if (value === 'Not Prepared') score += 1;
+                break;
+              case 'q20': // Preaching past 70
+                if (value === 'Definitely') score += 5;
+                else if (value === 'Likely') score += 4;
+                else if (value === 'Not Sure') score += 3;
+                else if (value === 'Unlikely') score += 2;
+                else if (value === 'Not at all') score += 1;
+                break;
+            }
+          }
+        }
+        
+        return totalQuestions > 0 ? Math.round((score / totalQuestions) * 20) : 0;
+      }
+
+
+      submitBtn.addEventListener('click', function() {
+        // Check if all assessment questions are answered
+        const selects = assessmentQuestions.querySelectorAll('select[name^="q"]');
+        let allAnswered = true;
+        
+        for (let select of selects) {
+          if (!select.value) {
+            allAnswered = false;
+            select.classList.add('border-red-500');
+          } else {
+            select.classList.remove('border-red-500');
+          }
+        }
+
+        if (!allAnswered) {
+          alert('Please answer all questions before submitting.');
+          return;
+        }
+
+        // Calculate and store results privately (not displayed)
+        const score = calculateScore();
+        localStorage.setItem('heartHealthScore', score);
+        localStorage.setItem('assessmentAnswers', JSON.stringify(Array.from(selects).map(s => ({name: s.name, value: s.value}))));
+
+        // Copy assessment answers to hidden fields
+        for (let i = 1; i <= 20; i++) {
+          const questionSelect = document.querySelector(`select[name="q${i}"]`);
+          const hiddenField = document.getElementById(`hidden_q${i}`);
+          if (questionSelect && hiddenField) {
+            hiddenField.value = questionSelect.value;
+          }
+        }
+
+        // Hide assessment questions and show personal info form
+        assessmentQuestions.style.display = 'none';
+        pastorInfoSection.style.display = 'block';
+        pastorInfoSection.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Handle form submission
+      pastorInfoSection.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Store form data
+        const formData = new FormData(this);
+        const userData = {};
+        formData.forEach((value, key) => {
+          userData[key] = value;
+        });
+        
+        // Add assessment results
+        userData.heartHealthScore = localStorage.getItem('heartHealthScore');
+        userData.assessmentAnswers = localStorage.getItem('assessmentAnswers');
+        
+        // Store all data
+        localStorage.setItem('userAssessmentData', JSON.stringify(userData));
+        
+        // Redirect to post-submission page
+        window.location.href = 'post-submission.html';
+      });
+    });
+  </script>
+</body>
+</html>

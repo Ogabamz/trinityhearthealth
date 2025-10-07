@@ -682,6 +682,23 @@ src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"
         </div>
 
         <div class="content">
+            <!-- User Results Section -->
+            <div id="userResultsSection" class="welcome-message" style="display: none;">
+                <h2 style="color: #2e7d32; margin-bottom: 20px;">📊 Your Heart Health Assessment Results</h2>
+                <div id="userResultsContent">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+                <div style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); padding: 25px; border-radius: 15px; margin-top: 25px; border-left: 6px solid #28a745;">
+                    <h3 style="color: #2e7d32; margin-bottom: 15px; font-size: 1.4em;">🎯 What This Means for Your Ministry</h3>
+                    <p style="color: #1b5e20; font-size: 1.1em; line-height: 1.6;">Based on your assessment, the solution you're about to discover has been specifically designed to address the exact challenges you're facing. Pastor Adebayo's protocol has helped pastors with similar profiles achieve remarkable improvements in their energy, stamina, and overall health.</p>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button onclick="scrollToContent()" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 15px 30px; font-size: 1.2em; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);">
+                        Continue Reading - Discover the Solution ↓
+                    </button>
+                </div>
+            </div>
+
             <div class="welcome-message">
                 <h2 style="color: #2e7d32; margin-bottom: 20px;">🙏 God Bless You, Pastor!</h2>
                 <p><strong>Thank you for taking this important step toward better stewardship of your health.</strong> What you're about to discover has quietly helped over 200 Nigerian pastors reclaim their energy, reduce their dependence on medications (under medical supervision), and return to powerful, sustained ministry.</p>
@@ -919,6 +936,112 @@ src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"
             </div>
         </div>
     </div>
+
+    <script>
+        // Display user results on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = localStorage.getItem('userAssessmentData');
+            const userResultsSection = document.getElementById('userResultsSection');
+            const userResultsContent = document.getElementById('userResultsContent');
+            
+            if (userData) {
+                try {
+                    const data = JSON.parse(userData);
+                    const score = parseInt(data.heartHealthScore) || 0;
+                    
+                    // Generate personalized results
+                    let resultText = '';
+                    let urgencyLevel = '';
+                    
+                    if (score >= 80) {
+                        resultText = `<h3 style="color: #28a745; font-size: 1.8em; margin-bottom: 20px;">🌟 Excellent Heart Health Stewardship</h3>
+                            <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                                <p style="color: #155724; font-size: 1.2em; margin-bottom: 15px;"><strong>Your Score: ${score}/100</strong></p>
+                                <p style="color: #155724;">Congratulations! Your assessment shows you're taking excellent care of your heart health. You're setting a wonderful example for your congregation and positioning yourself for many more years of fruitful ministry.</p>
+                            </div>`;
+                        urgencyLevel = 'maintenance';
+                    } else if (score >= 60) {
+                        resultText = `<h3 style="color: #ffc107; font-size: 1.8em; margin-bottom: 20px;">⚠️ Good Foundation, Room for Improvement</h3>
+                            <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                                <p style="color: #856404; font-size: 1.2em; margin-bottom: 15px;"><strong>Your Score: ${score}/100</strong></p>
+                                <p style="color: #856404;">You have a solid foundation for heart health, but there are specific areas where focused attention could significantly improve your energy, stamina, and long-term ministry capacity.</p>
+                            </div>`;
+                        urgencyLevel = 'improvement';
+                    } else if (score >= 40) {
+                        resultText = `<h3 style="color: #fd7e14; font-size: 1.8em; margin-bottom: 20px;">🚨 Attention Needed - Health Concerns Identified</h3>
+                            <div style="background: linear-gradient(135deg, #ffe5d9 0%, #ffd3a5 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                                <p style="color: #d63384; font-size: 1.2em; margin-bottom: 15px;"><strong>Your Score: ${score}/100</strong></p>
+                                <p style="color: #d63384;">Your assessment reveals several areas that need immediate attention. The good news is that with the right support and guidance, you can turn this around and reclaim your health and energy.</p>
+                            </div>`;
+                        urgencyLevel = 'attention';
+                    } else {
+                        resultText = `<h3 style="color: #dc3545; font-size: 1.8em; margin-bottom: 20px;">⚠️ Urgent Action Required - Critical Health Issues</h3>
+                            <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                                <p style="color: #721c24; font-size: 1.2em; margin-bottom: 15px;"><strong>Your Score: ${score}/100</strong></p>
+                                <p style="color: #721c24;">Your assessment indicates serious health concerns that require immediate attention. Your calling is too important to let preventable health issues limit your ministry impact.</p>
+                            </div>`;
+                        urgencyLevel = 'urgent';
+                    }
+                    
+                    // Add personalized next steps based on score
+                    let nextSteps = '';
+                    if (urgencyLevel === 'urgent' || urgencyLevel === 'attention') {
+                        nextSteps = `<div style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #28a745;">
+                            <h4 style="color: #2e7d32; margin-bottom: 15px;">🎯 Immediate Action Plan</h4>
+                            <ul style="color: #1b5e20; line-height: 1.8;">
+                                <li>✅ Start with Pastor Adebayo's proven protocol immediately</li>
+                                <li>✅ Focus on the specific areas where you scored lowest</li>
+                                <li>✅ Implement consistent daily health practices</li>
+                                <li>✅ Monitor your progress weekly</li>
+                            </ul>
+                        </div>`;
+                    } else if (urgencyLevel === 'improvement') {
+                        nextSteps = `<div style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #28a745;">
+                            <h4 style="color: #2e7d32; margin-bottom: 15px;">🎯 Optimization Plan</h4>
+                            <ul style="color: #1b5e20; line-height: 1.8;">
+                                <li>✅ Enhance your current practices with proven supplements</li>
+                                <li>✅ Address specific areas for improvement</li>
+                                <li>✅ Boost your energy and stamina levels</li>
+                                <li>✅ Prepare for even more effective ministry</li>
+                            </ul>
+                        </div>`;
+                    } else {
+                        nextSteps = `<div style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #28a745;">
+                            <h4 style="color: #2e7d32; margin-bottom: 15px;">🎯 Maintenance & Enhancement Plan</h4>
+                            <ul style="color: #1b5e20; line-height: 1.8;">
+                                <li>✅ Maintain your excellent health practices</li>
+                                <li>✅ Add targeted nutritional support</li>
+                                <li>✅ Enhance your already strong foundation</li>
+                                <li>✅ Share your wisdom with other pastors</li>
+                            </ul>
+                        </div>`;
+                    }
+                    
+                    userResultsContent.innerHTML = resultText + nextSteps;
+                    userResultsSection.style.display = 'block';
+                    
+                    // Store urgency level for later use
+                    localStorage.setItem('urgencyLevel', urgencyLevel);
+                    
+                } catch (error) {
+                    console.error('Error parsing user data:', error);
+                    // Hide results section if there's an error
+                    userResultsSection.style.display = 'none';
+                }
+            } else {
+                // Hide results section if no data
+                userResultsSection.style.display = 'none';
+            }
+        });
+        
+        // Function to scroll to main content
+        function scrollToContent() {
+            document.querySelector('.domino-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
 
     <script>
         // --- Countdown Timer and Spots Logic ---
