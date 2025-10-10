@@ -1,0 +1,35 @@
+pastorInfoSection.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const submitBtn = this.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  const formData = new FormData(this);
+
+  // Format phone properly
+  let phone = formData.get('whatsapp').replace(/\D/g, '');
+  if (phone.startsWith('0')) phone = '234' + phone.slice(1);
+  if (!phone.startsWith('234')) phone = '234' + phone;
+
+  const name = formData.get('pastorName') || 'there';
+  
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxWEWXMS1oVJu4pkOQi8emNniTh26pfvzaMDXO4TmfJAY_ROEu6eYjYeSj3xcdEsJG-/exec', {
+      method: 'POST',
+      body: formData
+    });
+
+    fbq('track', 'Lead'); // Meta Conversion Event
+
+    const message = encodeURIComponent(`Hello Pastor ${name}, thank you for completing your Heart Health Scorecard! Our consultant will share your personalized report shortly.`);
+    window.location.href = `https://wa.me/${phone}?text=${message}`;
+
+  } catch (error) {
+    console.error('Submission failed:', error);
+    alert('Something went wrong. Please try again.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+  }
+});
