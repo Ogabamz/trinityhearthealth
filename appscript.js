@@ -15,7 +15,9 @@ function doPost(e) {
     Logger.log('Data received: ' + JSON.stringify(data));
     
     // Replace with your actual Spreadsheet ID and Sheet Name for reliability
-    const sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID_HERE').getSheetByName('YOUR_SHEET_NAME_HERE');
+    const SPREADSHEET_ID = '1FTdW514DZqYaQsftNVRC1zAzd-WjVX2c3Uoldv4Apsc';
+    const SHEET_NAME = 'Sheet1';
+    const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
 
     // Build the row with all data
     const row = [
@@ -40,6 +42,7 @@ function doPost(e) {
     
     Logger.log('Row appended successfully');
 
+    /*
     // Send to Facebook CAPI only if we have email or phone
     if (data['Email'] || data['Phone']) {
       const event = {
@@ -71,6 +74,7 @@ function doPost(e) {
         Logger.log('Facebook CAPI Error: ' + error.toString());
       }
     }
+    */
 
     return ContentService.createTextOutput(JSON.stringify({status: "success"}))
       .setMimeType(ContentService.MimeType.JSON);
