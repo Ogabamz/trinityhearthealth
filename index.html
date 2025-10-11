@@ -923,18 +923,32 @@ src="https://www.facebook.com/tr?id=31576639681951470&ev=PageView&noscript=1"
                         }
                     })
                     .then(response => {
-                        // Try to parse JSON, but fallback to redirect if not JSON
-                        return response.json().catch(() => ({}));
+                        if (response.ok) {
+                            const contentType = response.headers.get("content-type");
+                            if (contentType && contentType.indexOf("application/json") !== -1) {
+                                return response.json();
+                            } else {
+                                return response.text().then(text => {
+                                    throw new Error(`Expected JSON, but got ${contentType}. Response: ${text}`);
+                                });
+                            }
+                        } else {
+                            throw new Error(`Network response was not ok. Status: ${response.status}`);
+                        }
                     })
                     .then(result => {
-                        // Store form data in sessionStorage for the post-submission page
-                        const formObject = {};
-                        formData.forEach((value, key) => {
-                            formObject[key] = value;
-                        });
-                        sessionStorage.setItem('formData', JSON.stringify(formObject));
-                        // Redirect to post-submission page
-                        window.location.href = 'post-submission.html';
+                        if (result.status === "success") {
+                            // Store form data in sessionStorage for the post-submission page
+                            const formObject = {};
+                            formData.forEach((value, key) => {
+                                formObject[key] = value;
+                            });
+                            sessionStorage.setItem('formData', JSON.stringify(formObject));
+                            // Redirect to post-submission page
+                            window.location.href = 'post-submission.html';
+                        } else {
+                            throw new Error(result.message || "An unknown error occurred.");
+                        }
                     })
                     .catch(error => {
                         alert('There was an error submitting the form. Please try again.');
