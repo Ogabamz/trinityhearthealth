@@ -42,7 +42,6 @@ function doPost(e) {
     
     Logger.log('Row appended successfully');
 
-    /*
     // Send to Facebook CAPI only if we have email or phone
     if (data['Email'] || data['Phone']) {
       const event = {
@@ -58,7 +57,8 @@ function doPost(e) {
             ln: data['Last Name'] ? [sha256(data['Last Name'])] : [],
             ct: data['City'] ? [sha256(data['City'])] : []
           }
-        }]
+        }],
+        test_event_code: 'TEST78713'
       };
 
       const options = {
@@ -74,7 +74,6 @@ function doPost(e) {
         Logger.log('Facebook CAPI Error: ' + error.toString());
       }
     }
-    */
 
     return ContentService.createTextOutput(JSON.stringify({status: "success"}))
       .setMimeType(ContentService.MimeType.JSON);
