@@ -84,8 +84,16 @@
     <p>&copy; 2025 Trinity Heart Health. All Rights Reserved.</p>
   </footer>
 
-  <script>
-    // Questions and options
+  <!-- ✅ CryptoJS for hashing user data -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+<script>
+/* =======================
+   Trinity Heart Health Scorecard Tracking
+   Fixed Version - 2025
+==========================*/
+
+// 🧩 Questions setup (same as before)
 const questions = [
   "How often do you feel short of breath during or after preaching?",
   "Do you regularly experience dizziness, headaches, or chest tightness?",
@@ -107,7 +115,6 @@ const questions = [
   "How often do you go for medical checkups or BP monitoring?",
   "How prepared is your ministry if your health fails temporarily?",
   "Do you see yourself still preaching actively past the age of 70?"
- 
 ];
 
 const options = [
@@ -131,7 +138,6 @@ const options = [
   ["Never", "Rarely", "Sometimes", "Often", "Regularly"],
   ["Not Prepared", "Slightly Prepared", "Moderately Prepared", "Well Prepared", "Fully Prepared"],
   ["Not at all", "Unlikely", "Not Sure", "Likely", "Definitely"]
-  
 ];
 
 // Render questions
@@ -139,11 +145,16 @@ const container = document.getElementById('assessmentQuestions');
 questions.forEach((q, i) => {
   const div = document.createElement('div');
   div.className = 'mb-4';
-  div.innerHTML = `<label class='block mb-2 font-medium'>${i + 1}. ${q}</label><select name='q${i + 1}' class='w-full border rounded-lg p-2' required><option value=''>Select an option</option>${options[i].map(o => `<option>${o}</option>`).join('')}</select>`;
+  div.innerHTML = `
+    <label class='block mb-2 font-medium'>${i + 1}. ${q}</label>
+    <select name='q${i + 1}' class='w-full border rounded-lg p-2' required>
+      <option value=''>Select an option</option>
+      ${options[i].map(o => `<option>${o}</option>`).join('')}
+    </select>`;
   container.appendChild(div);
 });
 
-// Show info form after assessment
+// Show personal info form
 document.getElementById('submitBtn').addEventListener('click', () => {
   const allAnswered = Array.from(document.querySelectorAll('#assessmentQuestions select')).every(s => s.value);
   if (!allAnswered) return alert('Please answer all questions.');
@@ -151,72 +162,79 @@ document.getElementById('submitBtn').addEventListener('click', () => {
   document.getElementById('pastorInfoSection').style.display = 'block';
 });
 
-// Helper to get cookie by name
+// Utility: Get cookie
 function getCookie(name) {
   const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
   return match ? match[2] : '';
 }
 
-// Simple UUID generator for event_id
+// Generate event ID (UUID)
 function generateUUID() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
     return v.toString(16);
   });
 }
 
-// On submit, send all required fields to Google Sheet
+// SHA-256 hash
+const hash = str => str ? CryptoJS.SHA256(str.trim().toLowerCase()).toString() : '';
+
+// ===================
+// Submit Handler
+// ===================
 document.getElementById('pastorInfoSection').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const form = e.target;
   const formData = new FormData(form);
+  const eventId = generateUUID();
 
-  // Add Event Time and Source
+  // Add metadata
   formData.set('Event Time', new Date().toISOString());
   formData.set('Event Source URL', window.location.href);
-
-  // Add client identifiers for EMQ
+  formData.set('Event ID', eventId);
   formData.set('User Agent', navigator.userAgent);
   formData.set('fbp', getCookie('_fbp'));
   formData.set('fbc', getCookie('_fbc'));
 
-  // Generate unique event_id for dedup
-  const eventId = generateUUID();
-  formData.set('Event ID', eventId);
-
-  // Also collect the answers to the 20 questions
+  // Append question answers
   for (let i = 1; i <= questions.length; i++) {
     const sel = document.querySelector(`select[name="q${i}"]`);
-    if (sel) {
-      formData.set(`Q${i}`, sel.value);
-    }
+    if (sel) formData.set(`Q${i}`, sel.value);
   }
 
-  // Convert FormData to URL-encoded string for compatibility with Apps Script parsing
+  // Convert to URL-encoded format for Apps Script
   const params = new URLSearchParams();
-  formData.forEach((value, key) => {
-    params.append(key, value);
-  });
+  formData.forEach((v, k) => params.append(k, v));
 
   try {
+    // Save data to Google Sheets
     await fetch('https://script.google.com/macros/s/AKfycbxs0ImTg3lDGe9MXP3kSLd_GxCSPLBJLNmjeZIQ5mylyBNaJwHO9eUhkaCyA6wjTmZX/exec', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
       body: params.toString()
     });
 
-    // Fire pixel with eventID for deduplication
-    fbq('track', 'Lead', {}, {eventID: eventId});
+    // 🔥 Fire Meta Pixel with advanced matching + dedup
+    fbq('track', 'Lead', {
+      content_name: 'Heart Health Scorecard',
+      event_source_url: window.location.href,
+      em: hash(formData.get('Email')),
+      ph: hash(formData.get('Phone')),
+      fn: hash(formData.get('First Name')),
+      ln: hash(formData.get('Last Name')),
+      ct: hash(formData.get('City'))
+    }, { eventID: eventId });
 
+    // Redirect after success
     window.location.href = 'post-submission.html';
+
   } catch (error) {
     console.error('Submission failed:', error);
     alert('Something went wrong. Please try again.');
   }
 });
-  </script>
+</script>
+
 </body>
 </html>
